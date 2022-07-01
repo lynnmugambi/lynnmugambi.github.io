@@ -6,6 +6,7 @@
     >
       <div class="flex items-center justify-between">
         <div class="relative w-16 h-16">
+           <!-- Maybe change this -->
           <img
             class="rounded-full border border-gray-100 shadow-sm"
             src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=512&h=512&q=80"
@@ -47,19 +48,19 @@
         <h3
           class="hello-button text-gray-700 w-fit md:py-3 md:px-5 py-1 px-2 rounded-lg 3xl:text-3xl 2xl:text-xl lg:text-xl md:text-md text-sm font-semibold font-work_sans"
         >
-          👋 Hola,
+          👋 Hi,
         </h3>
         <h1
           class="3xl:text-8xl 2xl:text-7xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-3xl text-xl font-Eczar font-bold leading-tight text-gray-700"
         >
-          It's
+          I'm
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/lynnmugambi/"
             target="_blank"
             class="text-black hover:underline"
           >
-            Aliza Khan</a
-          >🙇‍♀️<br />Creative Designer and Storyteller
+            Lynn Mugambi</a
+          >🙋🏾‍♀️<br />Frontend Software Engineer and Solution Builder
         </h1>
 
         <div class="md:flex gap-1 md:gap-10">
@@ -85,19 +86,16 @@
   </div>
 
   <div class="banner-2 space-y-10 pb-20" id="work">
-    <h3 class="heading3 my-5">My Recent Work</h3>
+    <h3 class="heading3 my-5 center-heading">Some of the awesome organizations I have worked with</h3>
     <div class="card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
+        <h4 class="project-title item">Gopuff</h4>
         <p class="font-work_sans pr-12">
           Designed some empty state screens in kawaii style for the popular
           sheepify app.Tailwind lets you conditionally apply utility classes in
           different states using variant modifiers. For example, use hover:gap-6
           to only apply the gap-6 utility
         </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
-          View Case Study
-        </button>
       </div>
       <div class="card-image bg-green-100">
         <img
@@ -109,16 +107,13 @@
 
     <div class="card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
+        <h4 class="project-title item">Cellulant</h4>
         <p class="font-work_sans pr-12">
           Designed some empty state screens in kawaii style for the popular
           sheepify app.Tailwind lets you conditionally apply utility classes in
           different states using variant modifiers. For example, use hover:gap-6
           to only apply the gap-6 utility
         </p>
-        <button class="text-sky-800 font-bold text-2xl tracking-wider">
-          View Case Study
-        </button>
       </div>
       <div class="card-image">
         <img
@@ -130,16 +125,18 @@
 
     <div class="card">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title">Sheepify States</h4>
+        <h4 class="project-title">Lynk</h4>
         <p class="font-work_sans pr-12">
           Designed some empty state screens in kawaii style for the popular
           sheepify app.Tailwind lets you conditionally apply utility classes in
           different states using variant modifiers. For example, use hover:gap-6
           to only apply the gap-6 utility
         </p>
+        <!--
         <button class="text-sky-800 font-bold text-2xl tracking-wider">
           View Case Study
         </button>
+        -->
       </div>
       <div class="card-image bg-green-100">
         <img
@@ -154,7 +151,7 @@
     <div class="space-y-4 grid place-items-center mt-5">
       <h3 class="heading3">Some Generous Words</h3>
       <p class="font-work_sans text-gray-600 font-semibold leading-relaxed">
-        Some of my favorite testimonials from my clients
+        Recommendations from some of my co-workers
       </p>
     </div>
     <div class="max-w-6xl mx-auto px-8 py-16">
@@ -195,18 +192,24 @@
               class="relative py-12 lg:py-24 px-8 lg:px-16 text-gray-700 leading-relaxed"
             >
               <p>
-                As
-                <strong class="text-gray-900 font-medium">Slack</strong> grows
+                Lynn had been working at Gopuff for over a year when I took over managing her and her team in 2021. 
+                I was immediately impressed with her friendliness and clear communication. 
+                She is my favorite kind of software developer; 
+                always looking to learn new things and push herself into harder problem spaces.
+                <br/>
+                Lynn was a trusted member of the Scrum team who took on large problems and delivered results. 
+                She always did an excellent job of keeping the entire team in the loop and I trusted her to raise red flags when blocked or had questions.
+                <!--<strong class="text-gray-900 font-medium">Slack</strong> grows
                 rapidly, using Stripe helps them scale payments easily &mdash;
                 supporting everything from getting paid by users around the
-                world to enabling ACH payments for corporate customers.
+                world to enabling ACH payments for corporate customers.-->
               </p>
               <p class="mt-6">
                 <a
                   href="#"
                   class="font-medium text-indigo-600 hover:text-indigo-900"
                 >
-                  &rarr; Md Solaiman Hossain</a
+                  &rarr; Brooks H.</a
                 >
               </p>
             </div>
@@ -253,18 +256,22 @@
       alt="user image"
     />
     <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-      <h4 class="project-title item">Sheepify States</h4>
+      <h4 class="project-title item">Hey There!</h4>
       <p class="font-work_sans">
-        I am Salman Khan from Lucknow, India. I am working in an Indian Startup
-        as a User Eperience Designer for the past two years.
+        I am Lynn Mugambi! I am a digital nomad; currently based in Nairobi, Kenya
+         although I work remotely with companies from all over the world.
+          I am currently working as a software engineer at Gopuff.
+        Academically, I have a degree in Software Engineering from Staffordshire University (UK)
         <br />
-        I got featured various times on many big and small marketplaces,
-        portfolio websites and blogs. I also received some awards and
-        recognitions from some of the big and small award companies. Besides
-        designing, I like to watch anime, read books and solve sudoku.
+        I am super passionate about creating user interfaces that are intuitive,
+        delightful to use and provide value. My current tool of choice
+        is Vue however; I am constantly learning and currently ramping up in
+        React and no-code/low-code frameworks like Webflow.
+         <br />
+        Besides work, I enjoy travelling, archery and spending time with friends and family.
       </p>
       <button class="text-sky-800 font-bold text-2xl tracking-wider">
-        View Case Study
+        Download Resume
       </button>
     </div>
   </div>
@@ -272,10 +279,10 @@
   <div class="banner-1 flex h-full items-center">
     <div class="w-7/12 p-12">
       <h2 class="text-gray-700 md:text-6xl text-2xl font-Eczar mb-5 font-bold">
-        Let’s work together and make everything super cute and super useful.
+        Let’s work together and create something amazing!
       </h2>
       <a class="underline text-2xl text-blue-600 font-work_sans"
-        >📧 hire@author.com</a
+        >📧 mugambilynn@gmail.com</a
       >
     </div>
     <div class="w-5/12 pr-28">

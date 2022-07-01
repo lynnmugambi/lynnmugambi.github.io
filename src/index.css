@@ -43,6 +43,10 @@
 .card-image {
   @apply md:w-1/2 md:rounded-r-2xl md:rounded-l-none rounded-b-2xl flex;
 }
+.center-heading {
+  letter-spacing: 0px;
+  text-align: center;
+}
 
 @layer utilities {
   .h-850 {
