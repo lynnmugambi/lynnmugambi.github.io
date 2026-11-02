@@ -1,4 +1,5 @@
 ---
+import "@/styles/global.css";
 import { basics } from "@cv";
 import Boo from "@/layouts/Boo.astro";
 interface Props {
@@ -44,6 +45,8 @@ const { image, summary, url, theme } = basics;
 		</div>
 		<slot />
 		<style is:global>
+			@reference "../styles/global.css";
+
 			body,
 			figure {
 				margin: 0;

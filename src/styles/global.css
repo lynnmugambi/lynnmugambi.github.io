@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-skin-fill: rgb(var(--color-fill));
+  --color-skin-button-accent: rgb(var(--color-button-accent));
+  --color-skin-button-accent-hover: rgb(var(--color-button-accent-hover));
+  --color-skin-button-muted: rgb(var(--color-button-muted));
+  --color-skin-hue: rgb(var(--color));
+  --color-skin-muted: rgb(var(--muted));
+}
+
+@utility text-skin-base {
+  color: rgb(var(--color-text-base));
+}
+
+@utility text-skin-muted {
+  color: rgb(var(--color-text-muted));
+}
+
+@utility text-skin-inverted {
+  color: rgb(var(--color-text-inverted));
+}
