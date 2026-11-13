@@ -84,7 +84,7 @@ function ContactForm() {
       <label className="block">
         <span className="font-hand text-2xl">message</span>
         <textarea name="message" rows={4} maxLength={1000} className={field} />
-        {errors.message && <span className="text-sm text-destructive">{errors.message}</span>}
+        {errors["message"] && <span className="text-sm text-destructive">{errors["message"]}</span>}
       </label>
       <button type="submit" className={btn}>Send it ✉</button>
     </form>
