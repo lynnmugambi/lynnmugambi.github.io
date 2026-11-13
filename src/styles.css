@@ -30,6 +30,11 @@
  */
 
 @theme inline {
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+  --color-teal: var(--teal);
+  --color-plum: var(--plum);
+  --color-tape: var(--tape);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,21 +78,24 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 0.75rem;
+  --background: oklch(0.975 0.015 85);
+  --foreground: oklch(0.22 0.05 300);
+  --card: oklch(0.995 0.005 85);
+  --card-foreground: oklch(0.22 0.05 300);
+  --popover: oklch(0.995 0.005 85);
+  --popover-foreground: oklch(0.22 0.05 300);
+  --primary: oklch(0.48 0.2 300);
+  --primary-foreground: oklch(0.98 0.01 85);
+  --secondary: oklch(0.9 0.06 185);
+  --secondary-foreground: oklch(0.25 0.06 200);
+  --muted: oklch(0.93 0.02 85);
+  --muted-foreground: oklch(0.45 0.04 300);
+  --accent: oklch(0.6 0.12 185);
+  --accent-foreground: oklch(0.98 0.01 85);
+  --teal: oklch(0.6 0.12 185);
+  --plum: oklch(0.48 0.2 300);
+  --tape: oklch(0.88 0.08 300 / 70%);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.929 0.013 255.508);
@@ -153,3 +161,10 @@
     color: var(--color-foreground);
   }
 }
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background-image: radial-gradient(color-mix(in oklab, var(--plum) 12%, transparent) 1px, transparent 1px); background-size: 22px 22px; }
+@keyframes floaty { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-10px) rotate(var(--r,0deg)); } }
+@utility floaty { animation: floaty 6s ease-in-out infinite; }
+@keyframes rise { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+@utility rise { animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
