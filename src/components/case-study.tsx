@@ -38,7 +38,7 @@ export function CaseStudy({ data }: { data: CaseData }) {
               <span className="headline relative w-14 shrink-0 text-4xl">
                 {String(i + 1).padStart(2, "0")}
                 {i < data.steps.length - 1 && (
-                  <span aria-hidden className="absolute inset-x-0 top-12 -bottom-9 flex items-center justify-center pr-3">
+                  <span aria-hidden className="absolute inset-x-0 top-12 -bottom-9 flex items-center justify-center pr-5">
                     <svg viewBox="0 0 16 48" fill="none" className="h-12 w-4 text-teal">
                       <path d="M9 2 C3 8 3 12 8 17 C13 22 13 27 8 32 C3 37 4 42 10 46" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
