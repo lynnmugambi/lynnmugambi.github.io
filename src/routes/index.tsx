@@ -195,6 +195,7 @@ function Hero() {
             <Underline className="absolute -bottom-3 left-0 h-5 w-full sm:-bottom-4 sm:h-7" delay={0.6} />
           </span>
         </h1>
+        {visitor && <NiceToMeet className="absolute -right-4 top-[48%] z-30 hidden md:flex lg:right-0" />}
         <div className="rise mt-10 flex flex-wrap items-center gap-6" style={{ animationDelay: ".4s" }}>
           <a
             href="#work"
@@ -231,8 +232,7 @@ function Hero() {
         <Heart className="absolute left-0 top-2/3 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
         {visitor && (
           <>
-            <NiceToMeet className="mb-3 justify-center md:hidden" />
-            <NiceToMeet className="absolute -left-12 top-[22%] z-30 hidden md:flex lg:-left-20" />
+            <NiceToMeet className="mb-5 justify-center md:hidden" />
           </>
         )}
         <div className="relative z-10 mb-1 flex items-end gap-1">
