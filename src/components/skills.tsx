@@ -6,7 +6,7 @@ import {
 import { Arrow } from "@/components/doodles";
 
 type Icon = { path: string; hex: string };
-export const tools: { name: string; icon?: Icon }[] = [
+export const tools: { name: string; icon?: Icon | undefined }[] = [
   { name: "React", icon: siReact },
   { name: "React Native", icon: siReact },
   { name: "TypeScript", icon: siTypescript },
@@ -25,7 +25,7 @@ export const tools: { name: string; icon?: Icon }[] = [
 
 const tilts = [-4, 3, -2, 5, -5, 2, -3, 4, -2, 3, -4, 2, 5, -3];
 
-function Sticker({ i, name, icon }: { i: number; name: string; icon?: Icon }) {
+function Sticker({ i, name, icon }: { i: number; name: string; icon?: Icon | undefined }) {
   const wave = Math.sin(i * 0.9) * 14;
   return (
     <li className="sticker-slot shrink-0" style={{ transform: `translateY(${wave}px)`, ["--bob-delay" as string]: `${-i * 0.45}s` }}>
