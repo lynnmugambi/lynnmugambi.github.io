@@ -97,8 +97,8 @@ function VisitorName() {
   const shown = editing ? draft : name;
   return (
     <span className="relative inline-grid align-baseline">
-      <span aria-hidden className={"invisible col-start-1 row-start-1 whitespace-pre " + (shown ? "" : "text-[0.8em]")}>
-        {shown || "{{your_name}}"}
+      <span aria-hidden className="headline invisible col-start-1 row-start-1 whitespace-pre">
+        {shown || "{your_name}"}
       </span>
       {editing ? (
         <input
@@ -111,9 +111,12 @@ function VisitorName() {
             if (e.key === "Escape") setEditing(false);
           }}
           onBlur={save}
-          placeholder="{{your_name}}"
+          placeholder="{your_name}"
+          autoComplete="off"
+          data-1p-ignore
+          data-lpignore="true"
           aria-label="Your name"
-          className={(draft ? "headline " : "text-[0.8em] self-end ") + "absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-foreground placeholder:text-muted-foreground/60"}
+          className={"headline absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-foreground placeholder:text-muted-foreground/70 placeholder:uppercase"}
         />
       ) : (
         <button
@@ -123,9 +126,9 @@ function VisitorName() {
             setEditing(true);
           }}
           title="Click to type your name, press Enter to save"
-          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "text-[0.8em] text-muted-foreground/70")}
+          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "text-muted-foreground/70")}
         >
-          {name || "{{your_name}}"}
+          {name || "{your_name}"}
         </button>
       )}
       <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-muted-foreground/50" />
@@ -142,7 +145,7 @@ function Hero() {
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Engineer by trade · Product thinker by nature</p>
         <h1
-          className="headline rise mt-4 leading-[1] text-[3.5rem] sm:text-[4.75rem] md:text-[4rem] lg:text-[5.5rem]"
+          className="headline rise mt-4 !leading-[1.12] text-[3.5rem] sm:text-[4.75rem] md:text-[4rem] lg:text-[5.5rem]"
           style={{ animationDelay: ".1s" }}
         >
           <span className="whitespace-nowrap">Hi <VisitorName />,</span>
