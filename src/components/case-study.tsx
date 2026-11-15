@@ -33,9 +33,7 @@ export function CaseStudy({ data }: { data: CaseData }) {
       <section className="mt-20">
         <h2 className="headline text-3xl sm:text-4xl">How I got there</h2>
         <ol className="relative mt-10 space-y-10">
-          <svg aria-hidden viewBox="0 0 20 400" preserveAspectRatio="none" fill="none" className="absolute left-5 top-12 bottom-8 h-[calc(100%-5rem)] w-5 text-teal">
-            <path d="M10 0 C 18 25, 2 50, 10 75 S 18 125, 10 150 S 2 200, 10 225 S 18 275, 10 300 S 2 350, 10 400" stroke="currentColor" strokeWidth="2" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-          </svg>
+          <span aria-hidden className="absolute bottom-16 left-[1.625rem] top-12 border-l-2 border-dashed border-teal/60" />
           {data.steps.map((s, i) => (
             <li key={s.title} className="relative flex gap-6">
               <span className="headline relative w-14 shrink-0 bg-background text-4xl">{String(i + 1).padStart(2, "0")}</span>
