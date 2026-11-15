@@ -186,7 +186,7 @@ export function SkillsExplorer() {
 export function Skills() {
   return (
     <section id="skills" className="pb-20 pt-10">
-      <div className="marquee overflow-hidden pb-10 pt-8" aria-label="Tools I use">
+      <div className="marquee overflow-hidden pb-14 pt-4" aria-label="Tools I use">
         <div className="marquee-track flex w-max">
           <Row />
           <Row hidden />
