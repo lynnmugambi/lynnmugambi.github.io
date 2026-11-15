@@ -1,0 +1,2 @@
+- [x] Hero: note must not overlap photo on phone/tablet
+- [x] Hand-drawn frame around hero photo

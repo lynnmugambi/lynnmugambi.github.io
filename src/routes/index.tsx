@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
-import { Arrow, HandNote, Squiggle, Star, Underline } from "@/components/doodles";
+import { Arrow, Frame, HandNote, Squiggle, Star, Underline } from "@/components/doodles";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,7 +57,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.1fr_1fr] md:gap-0 md:pt-16">
+    <section id="top" className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 lg:grid-cols-[1.1fr_1fr] lg:gap-0 lg:pt-16">
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Product Engineer · 8 Years Shipping</p>
         <h1 className="headline rise mt-4 leading-[0.95] text-[5.25rem] sm:text-[8rem] lg:text-[10rem]" style={{ animationDelay: ".1s" }}>
@@ -73,14 +73,17 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto w-full max-w-sm md:ml-8 md:max-w-none lg:ml-16">
-        <Squiggle className="absolute left-0 top-4 w-28 -rotate-12" delay={0.8} />
+      <div className="relative mx-auto w-full max-w-sm lg:ml-12 lg:max-w-none">
+        <Squiggle className="absolute -bottom-4 left-0 w-24 -rotate-12 lg:bottom-auto lg:top-4 lg:w-28" delay={0.8} />
         <Star className="absolute right-4 top-2 h-9 w-9" delay={1} />
-        <Squiggle className="absolute -right-2 bottom-24 w-24 rotate-[20deg]" delay={1.1} />
-        <img src={portrait.url} alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt" width={795} height={768} className="rise relative w-full" style={{ animationDelay: ".2s" }} />
-        <div className="absolute -left-1 top-[42%] md:-left-10">
+        <Squiggle className="absolute -right-2 bottom-24 hidden w-24 lg:block rotate-[20deg]" delay={1.1} />
+        <div className="relative z-10 mb-1 flex items-end gap-1 lg:absolute lg:-left-10 lg:top-[42%] lg:mb-0 lg:block">
           <HandNote rotate={-8} className="text-3xl">hi, that's me</HandNote>
-          <Arrow className="ml-10 mt-1 h-14 w-20" delay={1.3} />
+          <Arrow className="h-12 w-16 rotate-[35deg] translate-y-4 lg:ml-10 lg:mt-1 lg:h-14 lg:w-20 lg:rotate-0 lg:translate-y-0" delay={1.3} />
+        </div>
+        <div className="relative px-4 pt-6 sm:px-6">
+          <Frame className="pointer-events-none absolute inset-0 h-full w-full" delay={0.3} />
+          <img src={portrait.url} alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt" width={795} height={768} className="rise relative w-full" style={{ animationDelay: ".2s" }} />
         </div>
       </div>
     </section>
