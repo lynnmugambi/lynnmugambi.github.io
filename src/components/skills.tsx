@@ -1,4 +1,4 @@
-import { useRef, useState, type KeyboardEvent } from "react";
+import { Fragment, useRef, useState, type KeyboardEvent } from "react";
 import {
   siReact, siTypescript, siVuedotjs, siTailwindcss, siGraphql, siSupabase, siFigma,
   siClaude, siGit, siStorybook, siGrafana, siVercel,
@@ -56,10 +56,10 @@ function Row({ hidden }: { hidden?: boolean }) {
   return (
     <ul className="flex items-center gap-6 pr-6" aria-hidden={hidden || undefined}>
       {tools.map((t, i) => (
-        <>
-          <Sticker key={t.name} i={i} name={t.name} icon={t.icon} />
-          {t.name === "Codex" && <AiNote key="note" />}
-        </>
+        <Fragment key={t.name}>
+          <Sticker i={i} name={t.name} icon={t.icon} />
+          {t.name === "Codex" && <AiNote />}
+        </Fragment>
       ))}
     </ul>
   );
