@@ -92,7 +92,7 @@ function Hero() {
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Engineer by trade · Product thinker by nature</p>
         <h1
-          className="headline rise mt-4 !leading-[1.12] text-[3.5rem] sm:text-[4.75rem] md:text-[4rem] lg:text-[5.5rem]"
+          className="headline rise mt-4 !leading-[1.12] text-[3.5rem] sm:text-[4.75rem] md:text-[5.25rem] lg:text-[7.5rem]"
           style={{ animationDelay: ".1s" }}
         >
           <span className="whitespace-nowrap">Hi there,</span>
