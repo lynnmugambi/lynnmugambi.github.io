@@ -109,11 +109,7 @@ export function SkillsExplorer() {
 export function Skills() {
   return (
     <section id="skills" className="pb-20 pt-14">
-      <div className="relative mx-auto flex max-w-6xl items-end justify-center gap-2 px-5 text-teal" aria-hidden>
-        <span className="font-hand -rotate-3 text-sm sm:text-base">AI in my daily workflow</span>
-        <svg viewBox="0 0 40 40" className="h-8 w-8 translate-y-3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M4 6c10 2 18 10 20 26" /><path d="M17 27l7 6 4-9" /></svg>
-      </div>
-      <div className="marquee overflow-hidden pb-10 pt-4" aria-label="Tools I use">
+      <div className="marquee overflow-hidden pb-10 pt-8" aria-label="Tools I use">
         <div className="marquee-track flex w-max">
           <Row />
           <Row hidden />
