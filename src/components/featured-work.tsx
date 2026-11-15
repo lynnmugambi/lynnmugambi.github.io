@@ -37,9 +37,9 @@ export const signInCase: CaseData = {
 export function FeaturedWork() {
   return (
     <section id="work" className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
-      <div className="flex flex-wrap items-start gap-x-3 gap-y-2">
+      <div className="flex flex-wrap items-end justify-between gap-x-3 gap-y-2">
         <h2 className="headline text-4xl sm:text-5xl lg:text-6xl">Featured work</h2>
-        <span className="font-hand -mt-2 -rotate-3 text-sm text-teal sm:text-base">three stories, picked on purpose</span>
+        <span className="font-hand pb-1 text-sm text-teal sm:text-base">Three stories, picked with purpose</span>
       </div>
       <ul className="mt-10 grid gap-6 md:grid-cols-3">
         {cards.map((c) => (
