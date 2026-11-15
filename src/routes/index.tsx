@@ -123,7 +123,7 @@ function VisitorName() {
             setEditing(true);
           }}
           title="Click to type your name, press Enter to save"
-          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "font-mono normal-case text-[0.5em] font-light tracking-tight text-teal")}
+          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "font-mono normal-case text-[0.5em] font-light tracking-tight text-foreground")}
         >
           {name || "{{your_name}}"}
         </button>
