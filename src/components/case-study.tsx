@@ -1,4 +1,4 @@
-import { Spiral, Star } from "@/components/doodles";
+import { Star } from "@/components/doodles";
 export type CaseData = {
   label: string; title: string; summary: string; role: string;
   sections: { heading: string; text: string }[];
@@ -24,12 +24,20 @@ export function CaseStudy({ data }: { data: CaseData }) {
       <h1 className="headline mt-5 text-5xl !leading-[1.02] sm:text-6xl">{data.title}</h1>
       <p className="mt-6 text-lg leading-relaxed text-teal sm:text-xl">{data.summary}</p>
       <div className="relative">
-        <Spiral aria-hidden className="pointer-events-none absolute -top-2 right-0 hidden h-16 w-20 text-teal sm:block" />
         <p className="label-mono mt-10 text-muted-foreground">My role</p>
       <p className="mt-2">{data.role}</p>
       </div>
-      {data.sections.map((s) => (
-        <section key={s.heading} className="mt-14">
+      {data.sections.map((s, i) => (
+        <section key={s.heading} className="relative mt-14">
+          {i === 0 && (
+            <svg aria-hidden viewBox="0 0 60 60" fill="none" className="pointer-events-none absolute -right-24 top-6 hidden h-14 w-14 -rotate-6 text-teal lg:block">
+              <path d="M8 10 C20 7 40 8 52 9 C54 22 53 40 51 52 C38 54 20 53 9 51 C7 38 6 22 8 10 Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path d="M30 46 L30 24 C30 18 34 16 38 17 M24 30 L37 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
+          )}
+          {i === data.sections.length - 1 && (
+            <span aria-hidden className="pointer-events-none absolute -right-28 top-10 hidden rotate-[-8deg] font-hand text-lg text-teal lg:block">yay!</span>
+          )}
           <h2 className="text-lg font-bold">{s.heading}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">{s.text}</p>
         </section>
