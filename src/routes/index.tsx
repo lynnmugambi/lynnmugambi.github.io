@@ -144,7 +144,7 @@ function Hero() {
             delay={1.6}
           />
           <CoffeeMug
-            className="absolute -bottom-6 -left-3 z-20 h-12 w-12 -rotate-6 sm:-left-5 sm:h-14 sm:w-14"
+            className="absolute -bottom-10 -left-10 z-20 h-12 w-12 -rotate-6 sm:-left-14 sm:h-14 sm:w-14"
             delay={1.1}
           />
           <img
