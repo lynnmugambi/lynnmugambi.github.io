@@ -97,8 +97,8 @@ function VisitorName() {
   const shown = editing ? draft : name;
   return (
     <span className="relative inline-grid align-baseline">
-      <span aria-hidden className={"invisible col-start-1 row-start-1 whitespace-pre " + (shown ? "" : "font-mono normal-case text-[0.5em] font-light tracking-tight")}>
-        {shown || "{{your_name}}"}
+      <span aria-hidden className={"invisible col-start-1 row-start-1 whitespace-pre " + (shown ? "" : "font-hand normal-case text-[0.62em] font-semibold tracking-normal")}>
+        {shown || (editing ? "your name" : "your name")}
       </span>
       {editing ? (
         <input
@@ -111,9 +111,9 @@ function VisitorName() {
             if (e.key === "Escape") setEditing(false);
           }}
           onBlur={save}
-          placeholder="{{your_name}}"
+          placeholder="your name"
           aria-label="Your name"
-          className={(draft ? "headline " : "font-mono normal-case text-[0.5em] font-light tracking-tight self-end ") + "absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-foreground placeholder:text-foreground/60"}
+          className={(draft ? "headline " : "font-hand normal-case text-[0.62em] font-semibold tracking-normal self-end ") + "absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-teal placeholder:text-teal/60"}
         />
       ) : (
         <button
@@ -123,12 +123,12 @@ function VisitorName() {
             setEditing(true);
           }}
           title="Click to type your name, press Enter to save"
-          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "font-mono normal-case text-[0.5em] font-light tracking-tight text-foreground")}
+          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "font-hand normal-case text-[0.62em] font-semibold tracking-normal text-teal")}
         >
-          {name || "{{your_name}}"}
+          {name || "your name ✎"}
         </button>
       )}
-      <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-foreground/40" />
+      <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-teal/70" />
     </span>
   );
 }
