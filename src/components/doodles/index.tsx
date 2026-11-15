@@ -41,3 +41,10 @@ export const Star = (p: DoodleProps) => (
 export function HandNote({ children, className, rotate = -4 }: { children: ReactNode; className?: string; rotate?: number }) {
   return <p className={cn("font-hand text-2xl leading-tight text-teal", className)} style={{ transform: `rotate(${rotate}deg)` }}>{children}</p>;
 }
+
+export const Frame = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 400 400" {...p}>
+    {P("M14 12 C 110 6, 250 16, 388 9 C 392 120, 384 260, 391 388 C 270 394, 130 386, 10 392 C 6 270, 15 130, 14 12")}
+    {P("M22 4 C 140 14, 280 2, 380 18 M 396 30 C 386 150, 398 280, 384 380 M 372 398 C 240 384, 120 398, 26 384 M 4 372 C 18 250, 2 120, 20 26")}
+  </Doodle>
+);

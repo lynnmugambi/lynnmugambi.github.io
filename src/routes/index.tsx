@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
-import { Arrow, HandNote, Squiggle, Star, Underline } from "@/components/doodles";
+import { Arrow, Frame, HandNote, Squiggle, Star, Underline } from "@/components/doodles";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -81,7 +81,10 @@ function Hero() {
           <HandNote rotate={-8} className="text-3xl">hi, that's me</HandNote>
           <Arrow className="h-12 w-16 rotate-[35deg] translate-y-4 lg:ml-10 lg:mt-1 lg:h-14 lg:w-20 lg:rotate-0 lg:translate-y-0" delay={1.3} />
         </div>
-        <img src={portrait.url} alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt" width={795} height={768} className="rise relative w-full" style={{ animationDelay: ".2s" }} />
+        <div className="relative px-4 pt-6 sm:px-6">
+          <Frame className="pointer-events-none absolute inset-0 h-full w-full" delay={0.3} />
+          <img src={portrait.url} alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt" width={795} height={768} className="rise relative w-full" style={{ animationDelay: ".2s" }} />
+        </div>
       </div>
     </section>
   );
