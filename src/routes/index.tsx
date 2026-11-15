@@ -128,7 +128,7 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-md lg:pl-2">
-        <div className="relative z-10 -mb-2 flex translate-y-3 items-end gap-0">
+        <div className="relative z-10 mb-3 flex items-end gap-0">
           <HandNote rotate={-8} className="-mr-3 -translate-y-3 text-lg sm:text-xl">
             yep, that's me
           </HandNote>
