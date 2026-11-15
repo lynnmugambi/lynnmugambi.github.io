@@ -137,12 +137,12 @@ function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.15fr_1fr] md:gap-4 lg:gap-0 lg:pt-16"
+      className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.1fr_1fr] md:gap-2 lg:gap-0 lg:pt-16"
     >
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Engineer by trade · Product thinker by nature</p>
         <h1
-          className="headline rise mt-4 leading-[1] text-[3rem] sm:text-[4rem] md:text-[3.75rem] lg:text-[5.5rem]"
+          className="headline rise mt-4 leading-[1] text-[3.5rem] sm:text-[4.75rem] md:text-[4.5rem] lg:text-[6.75rem]"
           style={{ animationDelay: ".1s" }}
         >
           Hi <VisitorName />,
@@ -163,7 +163,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-none lg:pl-14">
+      <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-none lg:pl-2">
         <Sparkle className="absolute right-6 top-6 hidden h-6 w-6 sm:block" delay={1.2} />
         <Heart className="absolute left-0 top-2/3 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
         <div className="relative z-10 mb-1 flex items-end gap-1">
@@ -175,8 +175,8 @@ function Hero() {
         <div className="relative px-4 pt-6 sm:px-6">
           <Frame className="pointer-events-none absolute inset-0 h-full w-full" delay={0.3} />
           <TerminalPrompt className="absolute right-6 top-10 z-20 h-10 w-12 rotate-6 sm:right-9 sm:h-12 sm:w-14" delay={1} />
-          <ClickCursor className="absolute left-7 top-1/3 z-20 h-9 w-9 -rotate-12 sm:left-10 sm:h-10 sm:w-10" delay={1.6} />
-          <CoffeeMug className="absolute bottom-3 right-6 z-20 h-12 w-12 sm:right-9 sm:h-14 sm:w-14" delay={1.1} />
+          <ClickCursor className="absolute bottom-3 right-6 z-20 h-9 w-9 -rotate-12 sm:right-9 sm:h-10 sm:w-10" delay={1.6} />
+          <CoffeeMug className="absolute left-7 top-1/3 z-20 h-12 w-12 sm:left-10 sm:h-14 sm:w-14" delay={1.1} />
           <Squiggle className="absolute bottom-4 left-7 z-20 w-20 -rotate-6 sm:left-10 sm:w-24" delay={0.8} />
           <Sparkle className="absolute bottom-20 right-8 z-20 h-5 w-5 sm:right-12" delay={1.5} />
           <img
