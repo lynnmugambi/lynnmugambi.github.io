@@ -33,7 +33,6 @@ export function CaseStudy({ data }: { data: CaseData }) {
       <section className="mt-20">
         <h2 className="headline text-3xl sm:text-4xl">How I got there</h2>
         <ol className="relative mt-10 space-y-10">
-          <span aria-hidden className="absolute bottom-16 left-4 top-12 border-l-2 border-dashed border-teal/60" />
           {data.steps.map((s, i) => (
             <li key={s.title} className="relative flex gap-6">
               <span className="headline relative w-14 shrink-0 bg-background text-4xl">{String(i + 1).padStart(2, "0")}</span>
