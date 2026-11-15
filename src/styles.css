@@ -205,3 +205,9 @@ body { font-family: var(--font-sans); background-image: radial-gradient(color-mi
   .marquee-track > ul[aria-hidden] { display: none; }
   .sticker-slot { transform: none !important; }
 }
+
+@keyframes fb-cursor { 0%,100% { transform: translate(14px,14px); } 40%,60% { transform: translate(0,0); } 50% { transform: translate(0,0) scale(.85); } }
+@keyframes fb-btn { 0%,46%,56%,100% { transform: scale(1); } 50% { transform: scale(.92); background: color-mix(in oklab, var(--teal) 15%, transparent); } }
+.fb-cursor { animation: fb-cursor 2.6s ease-in-out infinite; }
+.fb-btn { animation: fb-btn 2.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .fb-cursor, .fb-btn { animation: none; } }
