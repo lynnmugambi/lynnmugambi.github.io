@@ -35,7 +35,15 @@ export function CaseStudy({ data }: { data: CaseData }) {
         <ol className="relative mt-10 space-y-10">
           {data.steps.map((s, i) => (
             <li key={s.title} className="relative flex gap-6">
-              <span className="headline relative w-14 shrink-0 bg-background text-4xl">{String(i + 1).padStart(2, "0")}</span>
+              <span className="headline relative w-14 shrink-0 text-4xl">
+                {String(i + 1).padStart(2, "0")}
+                {i < data.steps.length - 1 && (
+                  <svg aria-hidden viewBox="0 0 30 90" fill="none" className="absolute -left-7 top-10 h-[calc(100%+2.5rem)] min-h-16 w-6 text-teal" preserveAspectRatio="none">
+                    <path d="M22 4 C10 16 6 30 7 50 C8 66 14 76 24 84" stroke="currentColor" strokeWidth="2" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+                    <path d="M15 82 L24 84 L22 75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+                  </svg>
+                )}
+              </span>
               <div className="pt-1">
                 <h3 className="font-bold">{s.title}</h3>
                 <p className="mt-1 leading-relaxed text-muted-foreground">{s.text}</p>
