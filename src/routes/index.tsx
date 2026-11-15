@@ -2,15 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
-import {
-  Arrow,
-  ClickCursor,
-  CoffeeMug,
-  Frame,
-  HandNote,
-  TerminalPrompt,
-  Underline,
-} from "@/components/doodles";
+import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, TerminalPrompt, Underline } from "@/components/doodles";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -92,10 +84,10 @@ function Hero() {
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Engineer by trade · Product thinker by nature</p>
         <h1
-          className="headline rise mt-4 !leading-[1.12] text-[3.5rem] sm:text-[4.75rem] md:text-[5.25rem] lg:text-[7.5rem]"
+          className="headline rise mt-4 !leading-[1.12] text-[3.5rem] sm:text-[4.75rem] md:text-[5rem] lg:text-[7rem]"
           style={{ animationDelay: ".1s" }}
         >
-          <span className="whitespace-nowrap">Hi there,</span>
+          <span className="whitespace-nowrap">Hey there,</span>
           <br />
           I'm{" "}
           <span className="relative inline-block">
@@ -151,7 +143,10 @@ function Hero() {
             className="absolute bottom-3 right-6 z-20 h-9 w-9 -rotate-12 sm:right-9 sm:h-10 sm:w-10"
             delay={1.6}
           />
-          <CoffeeMug className="absolute -bottom-6 -left-3 z-20 h-12 w-12 -rotate-6 sm:-left-5 sm:h-14 sm:w-14" delay={1.1} />
+          <CoffeeMug
+            className="absolute -bottom-6 -left-3 z-20 h-12 w-12 -rotate-6 sm:-left-5 sm:h-14 sm:w-14"
+            delay={1.1}
+          />
           <img
             src={portrait.url}
             alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt"
