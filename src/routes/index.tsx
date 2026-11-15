@@ -159,7 +159,7 @@ function VisitorName({ onName }: { onName?: (n: string) => void }) {
 
 function NiceToMeet({ className = "" }: { className?: string }) {
   return (
-    <div aria-live="polite" className={"nice-note pointer-events-none flex items-center gap-1 text-accent " + className}>
+    <div aria-live="polite" className={"nice-note pointer-events-none flex items-center gap-1 text-teal " + className}>
       <span className="nice-text font-hand text-2xl font-semibold lg:text-3xl" style={{ transform: "rotate(-6deg)" }}>
         nice to meet you!
       </span>
