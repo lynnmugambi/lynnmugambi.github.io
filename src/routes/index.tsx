@@ -132,7 +132,7 @@ function Hero() {
           <HandNote rotate={-8} className="-mr-3 -translate-y-3 text-lg sm:text-xl">
             yep, that's me
           </HandNote>
-          <Arrow className="h-10 w-14 rotate-[35deg] -translate-y-1" delay={1.3} />
+          <Arrow className="h-10 w-14 rotate-[35deg] translate-y-[6px]" delay={1.3} />
         </div>
         <div className="relative px-4 pt-6 sm:px-6">
           <Frame className="pointer-events-none absolute inset-0 h-full w-full" delay={0.3} />
