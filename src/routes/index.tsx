@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
 import {
@@ -83,94 +83,7 @@ function Nav() {
   );
 }
 
-function VisitorName({ onName }: { onName?: (n: string) => void }) {
-  const [name, setName] = useState("");
-  useEffect(() => {
-    onName?.(name);
-  }, [name, onName]);
-  const [draft, setDraft] = useState("");
-  const [editing, setEditing] = useState(false);
-  const ref = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    const saved = localStorage.getItem("visitor-name");
-    if (saved) setName(saved);
-  }, []);
-  useEffect(() => {
-    if (editing) ref.current?.focus();
-  }, [editing]);
-  const save = () => {
-    const v = draft.trim().slice(0, 24);
-    setName(v);
-    if (v) localStorage.setItem("visitor-name", v);
-    else localStorage.removeItem("visitor-name");
-    setEditing(false);
-  };
-  const shown = editing ? draft : name;
-  return (
-    <span className="relative inline-grid align-baseline">
-      <span aria-hidden className="headline invisible col-start-1 row-start-1 whitespace-pre">
-        {shown || "{your_name}"}
-      </span>
-      {editing ? (
-        <input
-          ref={ref}
-          value={draft}
-          maxLength={20}
-          onChange={(e) => setDraft(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") save();
-            if (e.key === "Escape") setEditing(false);
-          }}
-          onBlur={save}
-          placeholder="{your_name}"
-          autoComplete="off"
-          data-1p-ignore
-          data-lpignore="true"
-          aria-label="Your name"
-          className={
-            "headline absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:!outline-none text-foreground placeholder:text-muted-foreground/70 placeholder:uppercase"
-          }
-        />
-      ) : (
-        <button
-          type="button"
-          onClick={() => {
-            setDraft(name);
-            setEditing(true);
-          }}
-          title="Click to type your name, press Enter to save"
-          className={
-            "headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "text-muted-foreground/70")
-          }
-        >
-          {name || "{your_name}"}
-        </button>
-      )}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-muted-foreground/50"
-      />
-    </span>
-  );
-}
-
-function NiceToMeet({ className = "" }: { className?: string }) {
-  return (
-    <div aria-live="polite" className={"nice-note pointer-events-none flex items-center gap-1 text-teal " + className}>
-      <span className="nice-text font-hand text-2xl font-semibold lg:text-3xl" style={{ transform: "rotate(-6deg)" }}>
-        nice to meet you!
-      </span>
-      <svg viewBox="0 0 40 40" className="h-8 w-8 -rotate-6" aria-hidden fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-        <path pathLength={1} className="nice-stroke" d="M8 12 C11 15 13 17 15 20" />
-        <path pathLength={1} className="nice-stroke" d="M20 6 C20.5 11 21 14 21.5 18" />
-        <path pathLength={1} className="nice-stroke" d="M33 11 C30 14 28.5 16 27 19.5" />
-      </svg>
-    </div>
-  );
-}
-
 function Hero() {
-  const [visitor, setVisitor] = useState("");
   return (
     <section
       id="top"
@@ -182,9 +95,7 @@ function Hero() {
           className="headline rise mt-4 !leading-[1.12] text-[3.5rem] sm:text-[4.75rem] md:text-[4rem] lg:text-[5.5rem]"
           style={{ animationDelay: ".1s" }}
         >
-          <span className="whitespace-nowrap">
-            Hi <VisitorName onName={setVisitor} />,
-          </span>
+          <span className="whitespace-nowrap">Hi there,</span>
           <br />
           I'm{" "}
           <span className="relative inline-block">
@@ -192,7 +103,6 @@ function Hero() {
             <Underline className="absolute -bottom-3 left-0 h-5 w-full sm:-bottom-4 sm:h-7" delay={0.6} />
           </span>
         </h1>
-        {visitor && <NiceToMeet className="absolute -right-4 top-[30%] z-30 hidden md:flex lg:right-0" />}
         <div className="rise mt-10 flex flex-wrap items-center gap-6" style={{ animationDelay: ".4s" }}>
           <a
             href="#work"
@@ -225,11 +135,6 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-md lg:pl-2">
-        {visitor && (
-          <>
-            <NiceToMeet className="mb-5 justify-center md:hidden" />
-          </>
-        )}
         <div className="relative z-10 mb-1 flex items-end gap-1">
           <HandNote rotate={-8} className="text-3xl">
             yep, that's me
@@ -246,7 +151,7 @@ function Hero() {
             className="absolute bottom-3 right-6 z-20 h-9 w-9 -rotate-12 sm:right-9 sm:h-10 sm:w-10"
             delay={1.6}
           />
-          <CoffeeMug className="absolute left-7 top-1/3 z-20 h-12 w-12 sm:left-10 sm:h-14 sm:w-14" delay={1.1} />
+          <CoffeeMug className="absolute -bottom-6 -left-3 z-20 h-12 w-12 -rotate-6 sm:-left-5 sm:h-14 sm:w-14" delay={1.1} />
           <img
             src={portrait.url}
             alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt"
