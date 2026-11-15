@@ -21,7 +21,7 @@ export function CaseStudy({ data }: { data: CaseData }) {
       <p className="label-mono mt-10 text-muted-foreground">{data.label}</p>
       <p className="label-mono mt-2 text-muted-foreground">{readTime(data)} min read</p>
       <h1 className="headline mt-5 text-5xl !leading-[1.02] sm:text-6xl">{data.title}</h1>
-      <p className="mt-6 text-xl leading-relaxed sm:text-2xl">{data.summary}</p>
+      <p className="mt-6 text-lg leading-relaxed text-teal sm:text-xl">{data.summary}</p>
       <p className="label-mono mt-10 text-muted-foreground">My role</p>
       <p className="mt-2">{data.role}</p>
       {data.sections.map((s) => (
