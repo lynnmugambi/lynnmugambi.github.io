@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
 import { Arrow, Frame, HandNote, Heart, Sparkle, Spiral, Squiggle, Star, Underline } from "@/components/doodles";
@@ -75,6 +75,59 @@ function Nav() {
   );
 }
 
+function VisitorName() {
+  const [name, setName] = useState("");
+  const [draft, setDraft] = useState("");
+  const [editing, setEditing] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    const saved = localStorage.getItem("visitor-name");
+    if (saved) setName(saved);
+  }, []);
+  useEffect(() => {
+    if (editing) ref.current?.focus();
+  }, [editing]);
+  const save = () => {
+    const v = draft.trim().slice(0, 24);
+    setName(v);
+    if (v) localStorage.setItem("visitor-name", v);
+    else localStorage.removeItem("visitor-name");
+    setEditing(false);
+  };
+  if (editing) {
+    return (
+      <input
+        ref={ref}
+        value={draft}
+        maxLength={24}
+        onChange={(e) => setDraft(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") save();
+          if (e.key === "Escape") setEditing(false);
+        }}
+        onBlur={save}
+        placeholder="your name"
+        aria-label="Your name"
+        size={Math.max(draft.length, 9)}
+        className="headline inline-block max-w-full border-b-2 border-dashed border-primary bg-transparent text-primary outline-none placeholder:text-primary/40"
+      />
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        setDraft(name);
+        setEditing(true);
+      }}
+      title="Click to type your name, press Enter to save"
+      className="headline border-b-2 border-dashed border-primary/60 text-primary transition-colors hover:border-primary"
+    >
+      {name || "{your name}"}
+    </button>
+  );
+}
+
 function Hero() {
   return (
     <section
@@ -84,10 +137,10 @@ function Hero() {
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Product Engineer · 8 Years Shipping</p>
         <h1
-          className="headline rise mt-4 leading-[0.95] text-[3.25rem] sm:text-[6rem] md:text-[4.5rem] lg:text-[8rem]"
+          className="headline rise mt-4 leading-[1] text-[2.5rem] sm:text-[3.75rem] md:text-[3.25rem] lg:text-[5rem]"
           style={{ animationDelay: ".1s" }}
         >
-          Hey there!
+          Hi <VisitorName />
           <br />
           I'm{" "}
           <span className="relative inline-block">
