@@ -10,7 +10,7 @@ function Doodle({ viewBox, children, className, delay = 0 }: DoodleProps & { vie
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setDrawn(true); io.disconnect(); }
+      if (e?.isIntersecting) { setDrawn(true); io.disconnect(); }
     }, { threshold: 0.3 });
     io.observe(el);
     return () => io.disconnect();

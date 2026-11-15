@@ -60,7 +60,7 @@ function Hero() {
     <section id="top" className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.1fr_1fr] md:gap-0 md:pt-16">
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Product Engineer · 8 Years Shipping</p>
-        <h1 className="headline rise mt-4 text-[5.25rem] sm:text-[8rem] lg:text-[10rem]" style={{ animationDelay: ".1s" }}>
+        <h1 className="headline rise mt-4 leading-[0.95] text-[5.25rem] sm:text-[8rem] lg:text-[10rem]" style={{ animationDelay: ".1s" }}>
           Hello!,<br />
           I'm <span className="relative inline-block">Lynn.<Underline className="absolute -bottom-3 left-0 h-5 w-full sm:-bottom-4 sm:h-7" delay={0.6} /></span>
         </h1>
