@@ -57,14 +57,14 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 lg:grid-cols-[1.1fr_1fr] lg:gap-0 lg:pt-16">
+    <section id="top" className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.15fr_1fr] md:gap-4 lg:gap-0 lg:pt-16">
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Product Engineer · 8 Years Shipping</p>
-        <h1 className="headline rise mt-4 leading-[0.95] text-[5.25rem] sm:text-[8rem] lg:text-[10rem]" style={{ animationDelay: ".1s" }}>
+        <h1 className="headline rise mt-4 leading-[0.95] text-[5.25rem] sm:text-[8rem] md:text-[6.5rem] lg:text-[10rem]" style={{ animationDelay: ".1s" }}>
           Hello!,<br />
           I'm <span className="relative inline-block">Lynn.<Underline className="absolute -bottom-3 left-0 h-5 w-full sm:-bottom-4 sm:h-7" delay={0.6} /></span>
         </h1>
-        <p className="rise mt-8 max-w-md text-xl font-medium leading-snug sm:text-2xl" style={{ animationDelay: ".25s" }}>
+        <p className="rise mt-8 max-w-md text-xl font-medium leading-snug sm:text-2xl md:text-xl lg:text-2xl" style={{ animationDelay: ".25s" }}>
           Engineer by trade. Product thinker by nature.
         </p>
         <div className="rise mt-8 flex flex-wrap items-center gap-6" style={{ animationDelay: ".4s" }}>
@@ -73,7 +73,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto w-full max-w-sm lg:ml-12 lg:max-w-none">
+      <div className="relative mx-auto w-full max-w-sm md:max-w-none lg:ml-12">
         <Squiggle className="absolute -bottom-4 left-0 w-24 -rotate-12 lg:bottom-auto lg:top-4 lg:w-28" delay={0.8} />
         <Star className="absolute right-4 top-2 h-9 w-9" delay={1} />
         <Squiggle className="absolute -right-2 bottom-24 hidden w-24 lg:block rotate-[20deg]" delay={1.1} />
