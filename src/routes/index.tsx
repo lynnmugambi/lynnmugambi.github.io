@@ -74,13 +74,13 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-sm md:-ml-16 md:max-w-none">
-        <Squiggle className="absolute -left-2 top-8 w-28 -rotate-12" delay={0.8} />
+        <Squiggle className="absolute left-0 top-4 w-28 -rotate-12" delay={0.8} />
         <Star className="absolute right-4 top-2 h-9 w-9" delay={1} />
         <Squiggle className="absolute -right-2 bottom-24 w-24 rotate-[20deg]" delay={1.1} />
         <img src={portrait.url} alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt" width={795} height={768} className="rise relative w-full" style={{ animationDelay: ".2s" }} />
-        <div className="absolute -left-2 bottom-4 flex items-end gap-1 sm:left-0 md:-left-6">
-          <HandNote rotate={-6} className="text-3xl">hi, that's me</HandNote>
-          <Arrow className="mb-6 h-12 w-16 -rotate-[100deg] -scale-x-100" delay={1.3} />
+        <div className="absolute -left-1 top-[42%] md:-left-10">
+          <HandNote rotate={-8} className="text-3xl">hi, that's me</HandNote>
+          <Arrow className="ml-10 mt-1 h-14 w-20" delay={1.3} />
         </div>
       </div>
     </section>
