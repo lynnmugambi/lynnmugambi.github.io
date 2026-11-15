@@ -77,9 +77,9 @@ function Hero() {
         <Squiggle className="absolute -bottom-4 left-0 w-24 -rotate-12 lg:bottom-auto lg:top-4 lg:w-28" delay={0.8} />
         <Star className="absolute right-4 top-2 h-9 w-9" delay={1} />
         <Squiggle className="absolute -right-2 bottom-24 hidden w-24 lg:block rotate-[20deg]" delay={1.1} />
-        <div className="relative z-10 mb-1 flex items-end gap-1 lg:absolute lg:-left-10 lg:top-[42%] lg:mb-0 lg:block">
+        <div className="relative z-10 mb-1 flex items-end gap-1">
           <HandNote rotate={-8} className="text-3xl">hi, that's me</HandNote>
-          <Arrow className="h-12 w-16 rotate-[35deg] translate-y-4 lg:ml-10 lg:mt-1 lg:h-14 lg:w-20 lg:rotate-0 lg:translate-y-0" delay={1.3} />
+          <Arrow className="h-12 w-16 rotate-[35deg] translate-y-4" delay={1.3} />
         </div>
         <div className="relative px-4 pt-6 sm:px-6">
           <Frame className="pointer-events-none absolute inset-0 h-full w-full" delay={0.3} />
