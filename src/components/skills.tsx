@@ -84,8 +84,8 @@ export function SkillsExplorer() {
   };
   const tab = skillTabs[active]!;
   return (
-    <div className="mt-16">
-      <div role="tablist" aria-label="Skills" className="flex flex-wrap gap-3" onKeyDown={onKey}>
+    <div className="mt-10">
+      <div role="tablist" aria-label="Skills" className="flex flex-wrap justify-center gap-3" onKeyDown={onKey}>
         {skillTabs.map((t, i) => (
           <button key={t.id} ref={(el) => { refs.current[i] = el; }} role="tab" id={`tab-${t.id}`} aria-selected={i === active} aria-controls={`panel-${t.id}`} tabIndex={i === active ? 0 : -1} onClick={() => setActive(i)}
             className={"inline-flex items-center gap-2 rounded-full px-5 py-2 font-semibold transition-colors " + (i === active ? "border-[1.5px] border-primary text-primary" : "border-[1.5px] border-ink text-foreground hover:bg-muted")}>
@@ -109,16 +109,14 @@ export function SkillsExplorer() {
 export function Skills() {
   return (
     <section id="skills" className="py-20">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <h2 className="headline text-3xl sm:text-4xl lg:text-5xl">Framework agnostic. Product obsessed.</h2>
-      </div>
-      <div className="marquee mt-10 overflow-hidden py-10" aria-label="Tools I use">
+      <div className="marquee overflow-hidden py-10" aria-label="Tools I use">
         <div className="marquee-track flex w-max">
           <Row />
           <Row hidden />
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <h2 className="headline mt-6 text-center text-3xl sm:text-4xl lg:text-5xl">Framework agnostic. Product obsessed.</h2>
         <SkillsExplorer />
       </div>
     </section>
