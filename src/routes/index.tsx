@@ -113,7 +113,7 @@ function VisitorName() {
           onBlur={save}
           placeholder="your name"
           aria-label="Your name"
-          className={(draft ? "headline " : "font-hand normal-case text-[0.62em] font-semibold tracking-normal self-end ") + "absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-accent placeholder:text-accent/60"}
+          className={(draft ? "headline " : "font-hand normal-case text-[0.62em] font-semibold tracking-normal self-end ") + "absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-teal placeholder:text-teal/60"}
         />
       ) : (
         <button
@@ -123,12 +123,12 @@ function VisitorName() {
             setEditing(true);
           }}
           title="Click to type your name, press Enter to save"
-          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "font-hand normal-case text-[0.62em] font-semibold tracking-normal text-accent")}
+          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "font-hand normal-case text-[0.62em] font-semibold tracking-normal text-teal")}
         >
           {name || "your name ✎"}
         </button>
       )}
-      <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-accent/70" />
+      <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-teal/70" />
     </span>
   );
 }
