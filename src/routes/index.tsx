@@ -73,7 +73,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto w-full max-w-sm md:-ml-16 md:max-w-none">
+      <div className="relative mx-auto w-full max-w-sm md:ml-8 md:max-w-none lg:ml-16">
         <Squiggle className="absolute left-0 top-4 w-28 -rotate-12" delay={0.8} />
         <Star className="absolute right-4 top-2 h-9 w-9" delay={1} />
         <Squiggle className="absolute -right-2 bottom-24 w-24 rotate-[20deg]" delay={1.1} />
