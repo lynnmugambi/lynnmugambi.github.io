@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
-import { Arrow, Frame, HandNote, Heart, Sparkle, Spiral, Squiggle, Star, Underline } from "@/components/doodles";
+import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, Heart, Sparkle, Squiggle, TerminalPrompt, Underline } from "@/components/doodles";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,37 +94,42 @@ function VisitorName() {
     else localStorage.removeItem("visitor-name");
     setEditing(false);
   };
-  if (editing) {
-    return (
-      <input
-        ref={ref}
-        value={draft}
-        maxLength={24}
-        onChange={(e) => setDraft(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") save();
-          if (e.key === "Escape") setEditing(false);
-        }}
-        onBlur={save}
-        placeholder="your name"
-        aria-label="Your name"
-        size={Math.max(draft.length, 9)}
-        className="headline inline-block max-w-full border-b-2 border-dashed border-primary bg-transparent text-primary outline-none placeholder:text-primary/40"
-      />
-    );
-  }
+  const shown = editing ? draft : name;
   return (
-    <button
-      type="button"
-      onClick={() => {
-        setDraft(name);
-        setEditing(true);
-      }}
-      title="Click to type your name, press Enter to save"
-      className="headline border-b-2 border-dashed border-primary/60 text-primary transition-colors hover:border-primary"
-    >
-      {name || "{your name}"}
-    </button>
+    <span className="relative inline-grid align-baseline">
+      <span aria-hidden className="invisible col-start-1 row-start-1 whitespace-pre">
+        {shown || (editing ? "name" : "{your name}")}
+      </span>
+      {editing ? (
+        <input
+          ref={ref}
+          value={draft}
+          maxLength={20}
+          onChange={(e) => setDraft(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") save();
+            if (e.key === "Escape") setEditing(false);
+          }}
+          onBlur={save}
+          placeholder="name"
+          aria-label="Your name"
+          className="headline absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none placeholder:text-muted-foreground/50"
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={() => {
+            setDraft(name);
+            setEditing(true);
+          }}
+          title="Click to type your name, press Enter to save"
+          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "text-muted-foreground/60")}
+        >
+          {name || "{your name}"}
+        </button>
+      )}
+      <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-primary/60" />
+    </span>
   );
 }
 
@@ -135,12 +140,12 @@ function Hero() {
       className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.15fr_1fr] md:gap-4 lg:gap-0 lg:pt-16"
     >
       <div className="relative z-10">
-        <p className="label-mono rise text-muted-foreground">Product Engineer · 8 Years Shipping</p>
+        <p className="rise font-hand text-3xl text-teal sm:text-4xl">Engineer by trade, product thinker by nature.</p>
         <h1
-          className="headline rise mt-4 leading-[1] text-[2.5rem] sm:text-[3.75rem] md:text-[3.25rem] lg:text-[5rem]"
+          className="headline rise mt-5 leading-[1.05] text-[2.5rem] sm:text-[3.25rem] md:text-[3rem] lg:text-[4rem]"
           style={{ animationDelay: ".1s" }}
         >
-          Hi <VisitorName />
+          Hi <VisitorName />,
           <br />
           I'm{" "}
           <span className="relative inline-block">
@@ -148,13 +153,7 @@ function Hero() {
             <Underline className="absolute -bottom-3 left-0 h-5 w-full sm:-bottom-4 sm:h-7" delay={0.6} />
           </span>
         </h1>
-        <p
-          className="rise mt-8 max-w-md text-xl font-medium leading-snug sm:text-2xl md:text-xl lg:text-2xl"
-          style={{ animationDelay: ".25s" }}
-        >
-          Engineer by trade. Product thinker by nature.
-        </p>
-        <div className="rise mt-8 flex flex-wrap items-center gap-6" style={{ animationDelay: ".4s" }}>
+        <div className="rise mt-10 flex flex-wrap items-center gap-6" style={{ animationDelay: ".4s" }}>
           <a href="#work" className={buttonClass}>
             See my work
           </a>
@@ -165,12 +164,13 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-none lg:pl-14">
-        <Star className="absolute right-3 top-0 h-8 w-8" delay={1} />
+        <TerminalPrompt className="absolute right-2 top-0 z-20 h-9 w-12 rotate-6 sm:h-11 sm:w-14" delay={1} />
         <Sparkle className="absolute right-12 top-8 hidden h-6 w-6 sm:block" delay={1.2} />
         <Squiggle className="absolute bottom-0 left-2 z-20 w-20 -rotate-6 sm:w-24" delay={0.8} />
-        <Spiral className="absolute bottom-24 right-0 z-20 h-10 w-10 sm:h-12 sm:w-12" delay={1.1} />
-        <Heart className="absolute left-0 top-1/2 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
-        <Sparkle className="absolute bottom-2 right-10 z-20 h-5 w-5" delay={1.5} />
+        <CoffeeMug className="absolute -bottom-1 right-0 z-20 h-12 w-12 sm:h-14 sm:w-14" delay={1.1} />
+        <ClickCursor className="absolute left-0 top-1/3 z-20 h-9 w-9 -rotate-12 sm:h-10 sm:w-10" delay={1.6} />
+        <Heart className="absolute left-0 top-2/3 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
+        <Sparkle className="absolute bottom-16 right-2 z-20 h-5 w-5" delay={1.5} />
         <div className="relative z-10 mb-1 flex items-end gap-1">
           <HandNote rotate={-8} className="text-3xl">
             hi, that's me
