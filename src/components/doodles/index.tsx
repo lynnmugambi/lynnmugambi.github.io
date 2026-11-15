@@ -38,6 +38,16 @@ export const Star = (p: DoodleProps) => (
   <Doodle viewBox="0 0 40 40" {...p}>{P("M20 4 L23.5 15.8 L36 19.5 L24 23.6 L20.4 36 L16.3 24 L4 20.6 L16 16.4 Z")}</Doodle>
 );
 
+export const Spiral = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 60 60" {...p}>{P("M30 30 C 34 26, 38 32, 33 36 C 26 40, 20 32, 25 24 C 31 16, 44 22, 44 32 C 44 44, 28 50, 18 42 C 8 33, 12 14, 28 10 C 42 7, 54 18, 54 30")}</Doodle>
+);
+export const Sparkle = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 40 40" {...p}>{P("M20 4 L20 14 M20 26 L20 36 M4 20 L14 20 M26 20 L36 20 M9 9 L14 14 M26 26 L31 31")}</Doodle>
+);
+export const Heart = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 40 36" {...p}>{P("M20 32 C 8 22, 2 16, 4 9 C 6 3, 15 2, 20 10 C 25 2, 34 3, 36 9 C 38 16, 32 22, 20 32")}</Doodle>
+);
+
 export function HandNote({ children, className, rotate = -4 }: { children: ReactNode; className?: string; rotate?: number }) {
   return <p className={cn("font-hand text-2xl leading-tight text-teal", className)} style={{ transform: `rotate(${rotate}deg)` }}>{children}</p>;
 }
