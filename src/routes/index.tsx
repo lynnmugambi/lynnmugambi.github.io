@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
-import { Arrow, Frame, HandNote, Squiggle, Star, Underline } from "@/components/doodles";
+import { Arrow, Frame, HandNote, Heart, Sparkle, Spiral, Squiggle, Star, Underline } from "@/components/doodles";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -73,10 +73,13 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto w-full max-w-sm md:max-w-none lg:ml-12">
-        <Squiggle className="absolute -bottom-4 left-0 w-24 -rotate-12 lg:bottom-auto lg:top-4 lg:w-28" delay={0.8} />
-        <Star className="absolute right-4 top-2 h-9 w-9" delay={1} />
-        <Squiggle className="absolute -right-2 bottom-24 hidden w-24 lg:block rotate-[20deg]" delay={1.1} />
+      <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-none lg:pl-14">
+        <Star className="absolute right-3 top-0 h-8 w-8" delay={1} />
+        <Sparkle className="absolute right-12 top-8 hidden h-6 w-6 sm:block" delay={1.2} />
+        <Squiggle className="absolute bottom-0 left-2 z-20 w-20 -rotate-6 sm:w-24" delay={0.8} />
+        <Spiral className="absolute bottom-24 right-0 z-20 h-10 w-10 sm:h-12 sm:w-12" delay={1.1} />
+        <Heart className="absolute left-0 top-1/2 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
+        <Sparkle className="absolute bottom-2 right-10 z-20 h-5 w-5" delay={1.5} />
         <div className="relative z-10 mb-1 flex items-end gap-1">
           <HandNote rotate={-8} className="text-3xl">hi, that's me</HandNote>
           <Arrow className="h-12 w-16 rotate-[35deg] translate-y-4" delay={1.3} />
