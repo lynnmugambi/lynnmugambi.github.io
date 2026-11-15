@@ -84,7 +84,7 @@ function Hero() {
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Product Engineer · 8 Years Shipping</p>
         <h1
-          className="headline rise mt-4 leading-[0.95] text-[3.25rem] sm:text-[6rem] md:text-[4.5rem] lg:text-[10rem]"
+          className="headline rise mt-4 leading-[0.95] text-[3.25rem] sm:text-[6rem] md:text-[4.5rem] lg:text-[8rem]"
           style={{ animationDelay: ".1s" }}
         >
           Hey there!
