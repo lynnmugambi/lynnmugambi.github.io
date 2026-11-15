@@ -58,3 +58,24 @@ export const Frame = (p: DoodleProps) => (
     {P("M22 4 C 140 14, 280 2, 380 18 M 396 30 C 386 150, 398 280, 384 380 M 372 398 C 240 384, 120 398, 26 384 M 4 372 C 18 250, 2 120, 20 26")}
   </Doodle>
 );
+
+export const CoffeeMug = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 60 60" {...p}>
+    {P("M10 24 C 10 22, 40 21, 41 24 C 42 34, 40 48, 34 51 C 28 53, 20 53, 16 51 C 11 47, 9 34, 10 24 Z")}
+    {P("M41 29 C 50 27, 53 38, 40 42")}
+    {P("M20 17 C 16 12, 24 9, 20 4 M 30 17 C 26 12, 34 9, 30 4")}
+  </Doodle>
+);
+export const TerminalPrompt = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 70 50" {...p}>
+    {P("M5 7 C 25 5, 45 6, 65 6 C 66 20, 65 32, 64 44 C 45 45, 25 45, 6 44 C 5 30, 4 18, 5 7 Z")}
+    {P("M14 18 L 23 25 L 14 32")}
+    {P("M29 33 L 44 33")}
+  </Doodle>
+);
+export const ClickCursor = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 60 60" {...p}>
+    {P("M22 20 L 26 50 L 32 40 L 42 52 L 47 48 L 37 36 L 48 33 Z")}
+    {P("M18 12 L 15 5 M 12 18 L 5 15 M 24 10 L 26 3")}
+  </Doodle>
+);
