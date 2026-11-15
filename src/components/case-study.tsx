@@ -36,7 +36,13 @@ export function CaseStudy({ data }: { data: CaseData }) {
             </svg>
           )}
           {i === data.sections.length - 1 && (
-            <span aria-hidden className="pointer-events-none absolute -right-28 top-10 hidden rotate-[-8deg] font-hand text-lg text-teal lg:block">yay!</span>
+            <span aria-hidden className="pointer-events-none absolute -right-28 top-10 hidden lg:block">
+              <svg viewBox="0 0 120 40" fill="none" className="absolute -left-20 -top-7 h-8 w-28 text-teal">
+                <path d="M104 34 C96 22 90 12 76 11 C56 10 30 11 8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <path d="M15 5 L7 12 L15 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span className="block rotate-[-8deg] font-hand text-lg text-teal">yay!</span>
+            </span>
           )}
           <h2 className="text-lg font-bold">{s.heading}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">{s.text}</p>
