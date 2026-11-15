@@ -116,7 +116,7 @@ function VisitorName() {
           data-1p-ignore
           data-lpignore="true"
           aria-label="Your name"
-          className={"headline absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-foreground placeholder:text-muted-foreground/70 placeholder:uppercase"}
+          className={"headline absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:!outline-none text-foreground placeholder:text-muted-foreground/70 placeholder:uppercase"}
         />
       ) : (
         <button
