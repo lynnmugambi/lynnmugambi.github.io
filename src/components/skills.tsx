@@ -34,7 +34,7 @@ function Sticker({ i, name, icon }: { i: number; name: string; icon?: Icon | und
           {icon ? (
             <svg viewBox="0 0 24 24" className="h-9 w-9" role="img" aria-hidden fill={`#${icon.hex}`}><path d={icon.path} /></svg>
           ) : (
-            <span className="headline text-xl">{name}</span>}
+            <span className="headline text-xl">{name}</span>
           )}
         </div>
         {icon && <span className="label-mono !text-[0.6rem] !tracking-[0.1em] text-center leading-tight">{name}</span>}
