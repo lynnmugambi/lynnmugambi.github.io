@@ -80,7 +80,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.2fr_0.9fr] md:gap-10 lg:gap-16 lg:pt-16"
+      className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-10 pt-10 sm:px-8 md:grid-cols-[1.2fr_0.9fr] md:gap-10 lg:gap-16 lg:pt-16"
     >
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Engineer by trade · Product thinker by nature</p>
