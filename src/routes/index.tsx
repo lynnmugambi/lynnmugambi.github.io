@@ -86,8 +86,11 @@ function Nav() {
   );
 }
 
-function VisitorName() {
+function VisitorName({ onName }: { onName?: (n: string) => void }) {
   const [name, setName] = useState("");
+  useEffect(() => {
+    onName?.(name);
+  }, [name, onName]);
   const [draft, setDraft] = useState("");
   const [editing, setEditing] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
@@ -154,7 +157,23 @@ function VisitorName() {
   );
 }
 
+function NiceToMeet({ className = "" }: { className?: string }) {
+  return (
+    <div aria-live="polite" className={"nice-note pointer-events-none flex items-center gap-1 text-teal " + className}>
+      <span className="nice-text font-hand text-2xl font-semibold lg:text-3xl" style={{ transform: "rotate(-6deg)" }}>
+        nice to meet you!
+      </span>
+      <svg viewBox="0 0 40 40" className="h-8 w-8 -rotate-6" aria-hidden fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+        <path pathLength={1} className="nice-stroke" d="M8 12 C11 15 13 17 15 20" />
+        <path pathLength={1} className="nice-stroke" d="M20 6 C20.5 11 21 14 21.5 18" />
+        <path pathLength={1} className="nice-stroke" d="M33 11 C30 14 28.5 16 27 19.5" />
+      </svg>
+    </div>
+  );
+}
+
 function Hero() {
+  const [visitor, setVisitor] = useState("");
   return (
     <section
       id="top"
@@ -167,7 +186,7 @@ function Hero() {
           style={{ animationDelay: ".1s" }}
         >
           <span className="whitespace-nowrap">
-            Hi <VisitorName />,
+            Hi <VisitorName onName={setVisitor} />,
           </span>
           <br />
           I'm{" "}
@@ -210,6 +229,12 @@ function Hero() {
       <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-md lg:pl-2">
         <Sparkle className="absolute right-6 top-6 hidden h-6 w-6 sm:block" delay={1.2} />
         <Heart className="absolute left-0 top-2/3 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
+        {visitor && (
+          <>
+            <NiceToMeet className="mb-3 justify-center md:hidden" />
+            <NiceToMeet className="absolute -left-12 top-[22%] z-30 hidden md:flex lg:-left-20" />
+          </>
+        )}
         <div className="relative z-10 mb-1 flex items-end gap-1">
           <HandNote rotate={-8} className="text-3xl">
             yep, that's me
