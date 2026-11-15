@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkHifadhiRouteImport } from './routes/work.hifadhi'
+import { Route as WorkSignInRouteImport } from './routes/work.sign-in'
+import { Route as WorkSignUpRouteImport } from './routes/work.sign-up'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkHifadhiRoute = WorkHifadhiRouteImport.update({
+  id: '/work/hifadhi',
+  path: '/work/hifadhi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkSignInRoute = WorkSignInRouteImport.update({
+  id: '/work/sign-in',
+  path: '/work/sign-in',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkSignUpRoute = WorkSignUpRouteImport.update({
+  id: '/work/sign-up',
+  path: '/work/sign-up',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/work/hifadhi': typeof WorkHifadhiRoute
+  '/work/sign-in': typeof WorkSignInRoute
+  '/work/sign-up': typeof WorkSignUpRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/work/hifadhi': typeof WorkHifadhiRoute
+  '/work/sign-in': typeof WorkSignInRoute
+  '/work/sign-up': typeof WorkSignUpRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/work/hifadhi': typeof WorkHifadhiRoute
+  '/work/sign-in': typeof WorkSignInRoute
+  '/work/sign-up': typeof WorkSignUpRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/work/hifadhi' | '/work/sign-in' | '/work/sign-up'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/work/hifadhi' | '/work/sign-in' | '/work/sign-up'
+  id: '__root__' | '/' | '/work/hifadhi' | '/work/sign-in' | '/work/sign-up'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  WorkHifadhiRoute: typeof WorkHifadhiRoute
+  WorkSignInRoute: typeof WorkSignInRoute
+  WorkSignUpRoute: typeof WorkSignUpRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/hifadhi': {
+      id: '/work/hifadhi'
+      path: '/work/hifadhi'
+      fullPath: '/work/hifadhi'
+      preLoaderRoute: typeof WorkHifadhiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/sign-in': {
+      id: '/work/sign-in'
+      path: '/work/sign-in'
+      fullPath: '/work/sign-in'
+      preLoaderRoute: typeof WorkSignInRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/sign-up': {
+      id: '/work/sign-up'
+      path: '/work/sign-up'
+      fullPath: '/work/sign-up'
+      preLoaderRoute: typeof WorkSignUpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  WorkHifadhiRoute: WorkHifadhiRoute,
+  WorkSignInRoute: WorkSignInRoute,
+  WorkSignUpRoute: WorkSignUpRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

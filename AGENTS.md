@@ -28,3 +28,4 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+- Case studies share one template (src/components/case-study.tsx) with one route file per case under src/routes/work.*; why: consistent layout, each story gets its own shareable URL.
