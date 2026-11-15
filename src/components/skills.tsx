@@ -108,7 +108,7 @@ export function SkillsExplorer() {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="pb-20 pt-[3.2rem]">
       <div className="marquee overflow-hidden py-10" aria-label="Tools I use">
         <div className="marquee-track flex w-max">
           <Row />
@@ -116,7 +116,7 @@ export function Skills() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <h2 className="headline mt-6 text-center text-3xl sm:text-4xl lg:text-5xl">Framework agnostic. Product obsessed.</h2>
+        <h2 className="mt-6 text-center font-hand text-4xl font-bold text-teal sm:text-5xl lg:text-6xl">Framework agnostic. Product obsessed.</h2>
         <SkillsExplorer />
       </div>
     </section>

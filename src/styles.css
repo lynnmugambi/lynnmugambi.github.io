@@ -32,7 +32,7 @@
 @theme inline {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Anton", Impact, sans-serif;
-  --font-hand: "Caveat", cursive;
+  --font-hand: "Dancing Script", cursive;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --color-teal: var(--teal);
   --color-ink: var(--ink);
