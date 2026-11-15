@@ -30,16 +30,20 @@ export function CaseStudy({ data }: { data: CaseData }) {
       {data.sections.map((s, i) => (
         <section key={s.heading} className="relative mt-14">
           {i === 0 && (
-            <svg aria-hidden viewBox="0 0 60 60" fill="none" className="pointer-events-none absolute -right-24 top-6 hidden h-14 w-14 -rotate-6 text-teal lg:block">
-              <path d="M8 10 C20 7 40 8 52 9 C54 22 53 40 51 52 C38 54 20 53 9 51 C7 38 6 22 8 10 Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <path d="M30 46 L30 24 C30 18 34 16 38 17 M24 30 L37 30" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
+            <span aria-hidden className="pointer-events-none absolute -right-36 top-6 hidden -rotate-3 lg:block">
+              <span className="fb-btn flex items-center gap-1.5 rounded-lg border-2 border-teal px-2 py-1 font-hand text-xs text-teal">
+                <span className="grid h-4 w-4 place-items-center rounded-sm border-2 border-teal font-sans text-[0.6rem] font-bold leading-none">f</span>
+                sign in
+              </span>
+              <svg viewBox="0 0 24 24" fill="none" className="fb-cursor absolute -bottom-5 right-2 h-6 w-6 text-teal">
+                <path d="M5 3 L5 19 L9.5 14.5 L12.5 21 L15 20 L12 13.5 L18 13.5 Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" className="fill-background" />
+              </svg>
+            </span>
           )}
           {i === data.sections.length - 1 && (
-            <span aria-hidden className="pointer-events-none absolute -right-28 top-10 hidden lg:block">
-              <svg viewBox="0 0 120 40" fill="none" className="absolute -left-20 -top-7 h-8 w-28 text-teal">
-                <path d="M104 34 C96 22 90 12 76 11 C56 10 30 11 8 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                <path d="M15 5 L7 12 L15 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <span aria-hidden className="pointer-events-none absolute -right-16 top-12 hidden lg:block">
+              <svg viewBox="0 0 60 30" fill="none" className="absolute -left-12 -top-5 h-6 w-12 text-teal">
+                <path d="M54 26 C48 12 34 8 8 10 M15 4 L8 10 L15 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <span className="block rotate-[-8deg] font-hand text-lg text-teal">yay!</span>
             </span>
