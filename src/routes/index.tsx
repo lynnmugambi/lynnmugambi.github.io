@@ -8,9 +8,6 @@ import {
   CoffeeMug,
   Frame,
   HandNote,
-  Heart,
-  Sparkle,
-  Squiggle,
   TerminalPrompt,
   Underline,
 } from "@/components/doodles";
@@ -195,7 +192,7 @@ function Hero() {
             <Underline className="absolute -bottom-3 left-0 h-5 w-full sm:-bottom-4 sm:h-7" delay={0.6} />
           </span>
         </h1>
-        {visitor && <NiceToMeet className="absolute -right-4 top-[48%] z-30 hidden md:flex lg:right-0" />}
+        {visitor && <NiceToMeet className="absolute -right-4 top-[30%] z-30 hidden md:flex lg:right-0" />}
         <div className="rise mt-10 flex flex-wrap items-center gap-6" style={{ animationDelay: ".4s" }}>
           <a
             href="#work"
@@ -228,8 +225,6 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-md lg:pl-2">
-        <Sparkle className="absolute right-6 top-6 hidden h-6 w-6 sm:block" delay={1.2} />
-        <Heart className="absolute left-0 top-2/3 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
         {visitor && (
           <>
             <NiceToMeet className="mb-5 justify-center md:hidden" />
@@ -252,8 +247,6 @@ function Hero() {
             delay={1.6}
           />
           <CoffeeMug className="absolute left-7 top-1/3 z-20 h-12 w-12 sm:left-10 sm:h-14 sm:w-14" delay={1.1} />
-          <Squiggle className="absolute bottom-4 left-7 z-20 w-20 -rotate-6 sm:left-10 sm:w-24" delay={0.8} />
-          <Sparkle className="absolute bottom-20 right-8 z-20 h-5 w-5 sm:right-12" delay={1.5} />
           <img
             src={portrait.url}
             alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt"
