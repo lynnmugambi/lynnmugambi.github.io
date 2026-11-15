@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, TrendingUp, Zap } from "lucide-react";
 import type { CaseData } from "@/components/case-study";
 
 export const cards = [
@@ -9,9 +9,9 @@ export const cards = [
 ] as const;
 
 const wins = [
-  { n: "592%", t: "more app store reviews in two weeks, with the rating up from 2.3 to 4.25 stars." },
-  { n: "5%", t: "more revenue from a related-products row in search." },
-  { n: "3 days", t: "to ship a disaster-relief donation feature that reached 2M+ users." },
+  { n: "592%", icon: TrendingUp, t: "more app store reviews in two weeks, with the rating up from 2.3 to 4.25 stars." },
+  { n: "5%", icon: TrendingUp, t: "more revenue from a related-products row in search." },
+  { n: "3 days", icon: Zap, t: "to ship a disaster-relief donation feature that reached 2M+ users." },
 ];
 
 export const signInCase: CaseData = {
@@ -37,9 +37,9 @@ export const signInCase: CaseData = {
 export function FeaturedWork() {
   return (
     <section id="work" className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
-      <div className="flex flex-wrap items-end gap-x-5 gap-y-2">
+      <div className="flex flex-wrap items-start gap-x-3 gap-y-2">
         <h2 className="headline text-4xl sm:text-5xl lg:text-6xl">Featured work</h2>
-        <span className="font-hand -rotate-3 pb-1 text-sm text-teal sm:text-base">three stories, picked on purpose</span>
+        <span className="font-hand -mt-2 -rotate-3 text-sm text-teal sm:text-base">three stories, picked on purpose</span>
       </div>
       <ul className="mt-10 grid gap-6 md:grid-cols-3">
         {cards.map((c) => (
@@ -55,11 +55,11 @@ export function FeaturedWork() {
           </li>
         ))}
       </ul>
-      <p className="font-hand mt-14 text-sm text-teal sm:text-base">quick wins</p>
+      <p className="font-hand mt-14 text-lg text-teal sm:text-2xl">Quick Wins</p>
       <ul className="mt-3 grid gap-6 border-y border-ink/15 py-6 sm:grid-cols-3">
         {wins.map((w) => (
           <li key={w.n}>
-            <p className="headline text-4xl">{w.n}</p>
+            <p className="headline flex items-center gap-2 text-4xl">{w.n}<w.icon aria-hidden className="h-7 w-7 text-teal" strokeWidth={2.25} /></p>
             <p className="mt-1 text-sm text-muted-foreground">{w.t}</p>
           </li>
         ))}
