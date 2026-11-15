@@ -140,7 +140,7 @@ function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.1fr_1fr] md:gap-2 lg:gap-0 lg:pt-16"
+      className="mx-auto grid max-w-6xl items-center gap-6 px-5 pb-16 pt-10 sm:px-8 md:grid-cols-[1.2fr_0.9fr] md:gap-10 lg:gap-16 lg:pt-16"
     >
       <div className="relative z-10">
         <p className="label-mono rise text-muted-foreground">Engineer by trade · Product thinker by nature</p>
@@ -170,7 +170,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-none lg:pl-2">
+      <div className="relative mx-auto w-full min-w-0 max-w-sm px-3 pb-8 md:max-w-md lg:pl-2">
         <Sparkle className="absolute right-6 top-6 hidden h-6 w-6 sm:block" delay={1.2} />
         <Heart className="absolute left-0 top-2/3 z-20 hidden h-8 w-8 -rotate-12 sm:block" delay={1.4} />
         <div className="relative z-10 mb-1 flex items-end gap-1">
