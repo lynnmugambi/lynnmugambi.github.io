@@ -97,8 +97,8 @@ function VisitorName() {
   const shown = editing ? draft : name;
   return (
     <span className="relative inline-grid align-baseline">
-      <span aria-hidden className={"invisible col-start-1 row-start-1 whitespace-pre " + (shown ? "" : "font-hand normal-case text-[0.62em] font-semibold tracking-normal")}>
-        {shown || (editing ? "your name" : "your name")}
+      <span aria-hidden className={"invisible col-start-1 row-start-1 whitespace-pre " + (shown ? "" : "text-[0.8em]")}>
+        {shown || "{{your_name}}"}
       </span>
       {editing ? (
         <input
@@ -111,9 +111,9 @@ function VisitorName() {
             if (e.key === "Escape") setEditing(false);
           }}
           onBlur={save}
-          placeholder="your name"
+          placeholder="{{your_name}}"
           aria-label="Your name"
-          className={(draft ? "headline " : "font-hand normal-case text-[0.62em] font-semibold tracking-normal self-end ") + "absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-teal placeholder:text-teal/60"}
+          className={(draft ? "headline " : "text-[0.8em] self-end ") + "absolute inset-0 w-full min-w-0 appearance-none border-0 bg-transparent p-0 text-inherit caret-primary shadow-none outline-none ring-0 focus:outline-none focus:ring-0 focus-visible:outline-none text-foreground placeholder:text-muted-foreground/60"}
         />
       ) : (
         <button
@@ -123,12 +123,12 @@ function VisitorName() {
             setEditing(true);
           }}
           title="Click to type your name, press Enter to save"
-          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "font-hand normal-case text-[0.62em] font-semibold tracking-normal text-teal")}
+          className={"headline col-start-1 row-start-1 cursor-text text-left " + (name ? "" : "text-[0.8em] text-muted-foreground/70")}
         >
-          {name || "your name ✎"}
+          {name || "{{your_name}}"}
         </button>
       )}
-      <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-teal/70" />
+      <span aria-hidden className="pointer-events-none absolute -bottom-1 left-0 right-0 border-b-2 border-dotted border-muted-foreground/50" />
     </span>
   );
 }
