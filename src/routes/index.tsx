@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Skills } from "@/components/skills";
+import { FeaturedWork } from "@/components/featured-work";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
 import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, TerminalPrompt, Underline } from "@/components/doodles";
 
@@ -169,7 +170,8 @@ function Index() {
       <main className="overflow-x-hidden">
         <Hero />
         <Skills />
-        {["work", "beyond", "ask", "contact"].map((id) => (
+        <FeaturedWork />
+        {["beyond", "ask", "contact"].map((id) => (
           <section key={id} id={id} aria-hidden />
         ))}
       </main>
