@@ -1,3 +1,4 @@
+import { Spiral, Star } from "@/components/doodles";
 export type CaseData = {
   label: string; title: string; summary: string; role: string;
   sections: { heading: string; text: string }[];
@@ -16,21 +17,25 @@ function BackLink() {
 
 export function CaseStudy({ data }: { data: CaseData }) {
   return (
-    <main className="mx-auto max-w-[760px] px-5 py-12 sm:px-8 sm:py-16">
+    <main className="relative mx-auto max-w-[760px] px-5 py-12 sm:px-8 sm:py-16">
       <BackLink />
       <p className="label-mono mt-10 text-muted-foreground">{data.label}</p>
       <p className="label-mono mt-2 text-muted-foreground">{readTime(data)} min read</p>
       <h1 className="headline mt-5 text-5xl !leading-[1.02] sm:text-6xl">{data.title}</h1>
       <p className="mt-6 text-lg leading-relaxed text-teal sm:text-xl">{data.summary}</p>
-      <p className="label-mono mt-10 text-muted-foreground">My role</p>
+      <div className="relative">
+        <Spiral aria-hidden className="pointer-events-none absolute -top-2 right-0 hidden h-16 w-20 text-teal sm:block" />
+        <p className="label-mono mt-10 text-muted-foreground">My role</p>
       <p className="mt-2">{data.role}</p>
+      </div>
       {data.sections.map((s) => (
         <section key={s.heading} className="mt-14">
           <h2 className="text-lg font-bold">{s.heading}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">{s.text}</p>
         </section>
       ))}
-      <section className="mt-20">
+      <section className="relative mt-20">
+        <Star aria-hidden className="pointer-events-none absolute -left-20 -top-4 hidden h-12 w-12 text-teal lg:block" />
         <h2 className="headline text-3xl sm:text-4xl">How I got there</h2>
         <ol className="relative mt-10 space-y-10">
           {data.steps.map((s, i) => (
