@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { getRequestOrigin } from "@/lib/origin.functions";
 import { Nav } from "@/components/nav";
 import { Skills } from "@/components/skills";
 import { FeaturedWork } from "@/components/featured-work";
@@ -9,19 +10,21 @@ import portrait from "@/assets/lynn_portrait.png.asset.json";
 import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, TerminalPrompt, Underline } from "@/components/doodles";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Lynn Mugambi — Product Engineer" },
-      {
-        name: "description",
-        content: "Lynn Mugambi: engineer by trade, product thinker by nature. Product engineer with 8 years shipping.",
-      },
-      { property: "og:title", content: "Lynn Mugambi — Product Engineer" },
-      { property: "og:description", content: "Engineer by trade. Product thinker by nature." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  loader: () => getRequestOrigin(),
+  head: ({ loaderData }) => {
+    const img = loaderData ? `${loaderData}/og-image.jpg` : undefined;
+    return {
+      meta: [
+        { title: "Lynn Mugambi | Product Engineer" },
+        { name: "description", content: "Engineer by trade. Product thinker by nature. Featured work, skills and how to reach me." },
+        { property: "og:title", content: "Lynn Mugambi | Product Engineer" },
+        { property: "og:description", content: "Engineer by trade. Product thinker by nature. Featured work, skills and how to reach me." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+        ...(img ? [{ property: "og:image", content: img }, { name: "twitter:image", content: img }] : []),
+      ],
+    };
+  },
   component: Index,
 });
 
@@ -105,6 +108,8 @@ function Hero() {
             alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt"
             width={795}
             height={768}
+            fetchPriority="high"
+            decoding="async"
             className="rise relative w-full"
             style={{ animationDelay: ".2s" }}
           />
