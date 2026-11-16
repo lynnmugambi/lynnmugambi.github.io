@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Arrow } from "@/components/doodles";
 import resume from "@/assets/Lynn_Mugambi_Resume.pdf.asset.json";
 
-export const EMAIL = "mailto:lynnlmugambi@gmail.com";
+export const EMAIL_ADDRESS = "lynnlmugambi@gmail.com";
+export const EMAIL = `mailto:${EMAIL_ADDRESS}`;
 
 export const footerLinks: { label: string; href: string; external?: boolean; download?: boolean }[] = [
   { label: "LinkedIn", href: "https://linkedin.com/in/lynnmugambi", external: true },
@@ -11,6 +13,16 @@ export const footerLinks: { label: string; href: string; external?: boolean; dow
 ];
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+  const copyEmail = () => {
+    navigator.clipboard?.writeText(EMAIL_ADDRESS).then(
+      () => {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2500);
+      },
+      () => {},
+    );
+  };
   return (
     <>
       <section id="contact" className="bg-[var(--lavender)] text-ink">
@@ -27,6 +39,7 @@ export function Contact() {
                     className="label-mono text-ink transition-colors hover:text-primary focus-visible:text-primary"
                     {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     {...(l.download ? { download: "Lynn_Mugambi_Resume.pdf" } : {})}
+                    {...(l.href === EMAIL ? { onClick: copyEmail } : {})}
                   >
                     {l.label}
                   </a>
@@ -38,6 +51,7 @@ export function Contact() {
             <Arrow className="pointer-events-none absolute -top-14 left-2 h-12 w-16 rotate-[30deg] md:-left-24 md:-top-16 md:h-16 md:w-24 md:rotate-0" />
             <a
               href={EMAIL}
+              onClick={copyEmail}
               className="group relative inline-flex items-center justify-center px-7 py-3.5 font-semibold text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:rotate-[-1deg] active:translate-y-0"
             >
               <svg
@@ -60,6 +74,17 @@ export function Contact() {
               </svg>
               <span className="relative">Get in touch</span>
             </a>
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="label-mono mt-4 block text-ink transition-colors hover:text-primary focus-visible:text-primary"
+              aria-label={`Copy ${EMAIL_ADDRESS}`}
+            >
+              {EMAIL_ADDRESS}
+            </button>
+            <p role="status" aria-live="polite" className="mt-2 h-6 font-hand text-sm text-teal">
+              {copied ? "copied to clipboard!" : ""}
+            </p>
           </div>
         </div>
       </section>
