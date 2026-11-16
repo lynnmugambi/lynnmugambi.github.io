@@ -43,6 +43,11 @@ export function Contact() {
                   >
                     {l.label}
                   </a>
+                  {l.href === EMAIL && (
+                    <p role="status" aria-live="polite" className="mt-1 h-6 font-hand text-sm text-teal">
+                      {copied ? "copied to clipboard!" : ""}
+                    </p>
+                  )}
                 </li>
               ))}
             </ul>
@@ -75,9 +80,6 @@ export function Contact() {
               </svg>
               <span className="relative">Get in touch</span>
             </a>
-            <p role="status" aria-live="polite" className="mt-2 h-6 font-hand text-sm text-teal">
-              {copied ? "copied to clipboard!" : ""}
-            </p>
           </div>
         </div>
       </section>
