@@ -114,3 +114,25 @@ export function ResultNote({ text, className }: { text: string; className?: stri
 export const CircleMark = (p: DoodleProps) => (
   <Doodle viewBox="0 0 100 70" {...p}>{P("M58 6 C 30 3, 6 14, 5 34 C 4 54, 28 66, 52 65 C 78 64, 96 52, 95 33 C 94 15, 74 4, 48 8 C 40 9, 34 11, 30 14")}</Doodle>
 );
+
+export const VSquiggle = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 30 400" {...p}>{P("M15 3 C 2 30, 28 50, 15 80 S 2 130, 15 160 S 28 210, 15 240 S 2 290, 15 320 S 28 370, 15 397")}</Doodle>
+);
+export const PaperPlane = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 60 50" {...p}>
+    {P("M4 24 L 56 5 L 40 45 L 28 30 Z")}
+    {P("M56 5 L 28 30 L 26 42 L 33 36")}
+  </Doodle>
+);
+export const Bulb = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 50 60" {...p}>
+    {P("M18 42 C 18 34, 8 30, 9 19 C 10 9, 18 4, 25 4 C 33 4, 41 10, 41 20 C 41 30, 32 34, 32 42 Z")}
+    {P("M18 48 L 32 48 M 20 54 L 30 54 M 25 42 L 25 28 L 21 24 M 25 28 L 29 24")}
+  </Doodle>
+);
+export const Paintbrush = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 60 60" {...p}>
+    {P("M52 6 L 30 32 L 26 28 L 52 6")}
+    {P("M28 30 C 22 30, 16 34, 15 42 C 14 48, 10 52, 6 54 C 16 56, 28 52, 30 42 C 31 38, 31 34, 30 32")}
+  </Doodle>
+);
