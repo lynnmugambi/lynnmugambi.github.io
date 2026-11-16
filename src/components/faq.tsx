@@ -13,9 +13,9 @@ export function Faq() {
   return (
     <section id="ask" className="mx-auto max-w-6xl px-5 pb-24 pt-10 sm:px-8">
       <p className="label-mono text-muted-foreground">Q&amp;A</p>
-      <div className="mt-2 flex flex-wrap items-end gap-x-6 gap-y-2">
+      <div className="mt-2 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
         <h2 className="headline text-3xl sm:text-4xl lg:text-5xl">Questions, answered.</h2>
-        <span className="flex rotate-[-4deg] items-center gap-2 pb-1 font-hand text-sm text-teal sm:text-base">
+        <span className="flex items-center gap-2 pb-1 font-hand text-sm text-teal sm:text-base">
           yes, I read your mind <CrystalBall className="h-9 w-9" />
         </span>
       </div>
