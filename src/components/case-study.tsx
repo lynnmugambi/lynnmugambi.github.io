@@ -45,7 +45,7 @@ export function CaseStudy({ data }: { data: CaseData }) {
             <li key={s.title} className="relative flex gap-6">
               <span className="headline relative h-fit w-14 shrink-0 text-center text-4xl">
                 {String(i + 1).padStart(2, "0")}
-                <CircleMark className="pointer-events-none absolute -inset-x-3 -inset-y-2 h-[calc(100%+1rem)] w-[calc(100%+1.5rem)]" style={{ rotate: `${[-6, 4, -2, 7][i % 4]}deg` }} delay={0.1} />
+                <CircleMark className="pointer-events-none absolute -left-3 -top-3 h-[calc(100%+1.5rem)] w-[calc(100%+1.5rem)]" style={{ rotate: `${[-6, 4, -2, 7][i % 4]}deg` }} delay={0.1} />
               </span>
               <div className="pt-1">
                 <h3 className="font-bold">{s.title}</h3>
