@@ -15,7 +15,7 @@ function Note({ n }: { n: (typeof notes)[number] }) {
     <li className="relative">
       <button type="button" aria-expanded={open} onClick={() => setOpen((o) => !o)}
         style={{ ["--tilt" as string]: `${n.tilt}deg` }}
-        className={cn("note-paper group relative flex min-h-64 w-full flex-col items-center px-5 pb-6 pt-9 text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary", open && "is-open")}>
+        className={cn("note-paper group relative flex min-h-64 w-full flex-col items-center justify-center px-5 pb-6 pt-9 text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary", open && "is-open")}>
         <span aria-hidden className="note-tape" />
         <n.Icon className="note-front h-14 w-14" />
         <h3 className="headline mt-4 text-2xl">{n.title}</h3>
