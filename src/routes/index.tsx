@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Nav } from "@/components/nav";
 import { Skills } from "@/components/skills";
 import { FeaturedWork } from "@/components/featured-work";
 import { Beyond } from "@/components/beyond";
@@ -26,59 +26,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const links = [
-  { href: "#work", label: "Work" },
-  { href: "#skills", label: "Skills" },
-  { href: "#beyond", label: "Beyond code" },
-  { href: "#ask", label: "Q&A" },
-  { href: "#contact", label: "Contact" },
-];
-
 export const buttonClass =
   "inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0";
-
-function Nav() {
-  const [open, setOpen] = useState(false);
-  return (
-    <header className="sticky top-0 z-30 border-b border-ink/10 bg-background/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main">
-        <a href="#top" className="label-mono text-foreground">
-          Lynn Mugambi
-        </a>
-        <ul className="hidden gap-7 md:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-sm font-medium text-primary hover:underline underline-offset-4">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <button
-          type="button"
-          className="rounded p-1 md:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </nav>
-      {open && (
-        <ul id="mobile-menu" className="border-t border-ink/10 px-5 pb-4 md:hidden">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} onClick={() => setOpen(false)} className="block py-3 text-lg font-medium text-primary">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
-    </header>
-  );
-}
 
 function Hero() {
   return (

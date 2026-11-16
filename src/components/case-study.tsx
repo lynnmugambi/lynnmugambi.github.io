@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { CircleMark, Star } from "@/components/doodles";
+import { Nav } from "@/components/nav";
 export type CaseData = {
   label: string; title: string; summary: string; role: string;
   sections: { heading: string; text: string }[];
@@ -19,6 +20,8 @@ function BackLink() {
 
 export function CaseStudy({ data }: { data: CaseData }) {
   return (
+    <>
+    <Nav active="work" home="/" />
     <main className="relative mx-auto max-w-[760px] px-5 py-12 sm:px-8 sm:py-16">
       <BackLink />
       <p className="label-mono mt-10 text-muted-foreground">{data.label}</p>
