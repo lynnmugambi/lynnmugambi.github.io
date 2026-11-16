@@ -36,8 +36,7 @@ export function Contact() {
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    className={`label-mono text-ink transition-colors ${l.href === EMAIL ? "normal-case underline underline-offset-4" : ""}`}
-                    
+                    className={`label-mono text-ink transition-colors hover:text-primary focus-visible:text-primary ${l.href === EMAIL ? "normal-case underline underline-offset-4" : ""}`}
                     {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     {...(l.download ? { download: "Lynn_Mugambi_Resume.pdf" } : {})}
                     {...(l.href === EMAIL ? { onClick: copyEmail } : {})}
