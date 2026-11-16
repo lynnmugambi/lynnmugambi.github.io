@@ -11,9 +11,9 @@ describe("Questions, answered", () => {
   });
 });
 describe("Contact", () => {
-  it("emails Lynn", () => {
+  it("opens LinkedIn", () => {
     render(<Contact />);
-    expect(screen.getByRole("link", { name: "Get in touch" }).getAttribute("href")).toBe("mailto:lynnlmugambi@gmail.com");
+    expect(screen.getByRole("link", { name: "Get in touch" }).getAttribute("href")).toBe("https://linkedin.com/in/lynnmugambi");
   });
 });
 describe("Footer", () => {
