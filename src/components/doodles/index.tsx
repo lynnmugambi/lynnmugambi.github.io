@@ -79,3 +79,33 @@ export const ClickCursor = (p: DoodleProps) => (
     {P("M18 12 L 15 5 M 12 18 L 5 15 M 24 10 L 26 3")}
   </Doodle>
 );
+
+export const NameField = (p: DoodleProps) => (
+  <span className={cn("relative block", p.className)} aria-hidden>
+    <span className="absolute left-2 top-0 font-hand text-xs text-teal">Name</span>
+    <Doodle viewBox="0 0 120 50" className="absolute inset-0 h-full w-full">
+      {P("M6 22 C 40 20, 80 21, 114 22 C 115 30, 114 38, 113 46 C 80 47, 40 46, 7 46 C 6 38, 5 30, 6 22 Z")}
+      {P("M14 40 C 30 26, 40 42, 56 30 S 84 40, 104 28")}
+    </Doodle>
+  </span>
+);
+
+export const CrumpledForm = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 120 70" {...p}>
+    {P("M8 10 L 20 6 L 30 12 L 42 5 L 50 14 L 46 30 L 52 44 L 40 58 L 26 54 L 12 62 L 6 46 L 12 32 Z")}
+    {P("M16 22 L 38 20 M 14 34 L 40 36 M 18 46 L 34 44")}
+    {P("M58 34 C 68 30, 76 30, 84 34")}
+    {P("M86 34 L 94 44 L 112 18")}
+  </Doodle>
+);
+
+export function ResultNote({ text, className }: { text: string; className?: string }) {
+  return (
+    <span aria-hidden className={className}>
+      <Doodle viewBox="0 0 60 30" className="absolute -left-12 -top-5 h-6 w-12">
+        {P("M54 26 C48 12 34 8 8 10 M15 4 L8 10 L15 16")}
+      </Doodle>
+      <span className="block whitespace-nowrap rotate-[-8deg] font-hand text-lg text-teal">{text}</span>
+    </span>
+  );
+}

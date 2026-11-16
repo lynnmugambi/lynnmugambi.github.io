@@ -14,3 +14,16 @@ describe("Featured work", () => {
     expect(screen.getByRole("link", { name: /back to featured work/i }).getAttribute("href")).toBe("/#work");
   });
 });
+
+import { hifadhiCase, signUpCase } from "@/components/featured-work";
+describe("New case pages", () => {
+  it.each([signUpCase, hifadhiCase])("shows all sections and four steps", (d) => {
+    const { unmount } = render(<CaseStudy data={d} />);
+    for (const h of ["The challenge", "My approach", "The outcome"]) expect(screen.getByRole("heading", { name: h })).toBeTruthy();
+    expect(screen.getByText("04")).toBeTruthy();
+    unmount();
+  });
+  it("Hifadhi has no note", () => {
+    expect(hifadhiCase.note).toBeUndefined();
+  });
+});
