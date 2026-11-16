@@ -4,6 +4,8 @@ import { Menu, X } from "lucide-react";
 import { Skills } from "@/components/skills";
 import { FeaturedWork } from "@/components/featured-work";
 import { Beyond } from "@/components/beyond";
+import { Faq } from "@/components/faq";
+import { Contact } from "@/components/contact";
 import portrait from "@/assets/lynn_portrait.png.asset.json";
 import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, TerminalPrompt, Underline } from "@/components/doodles";
 
@@ -173,9 +175,8 @@ function Index() {
         <Skills />
         <FeaturedWork />
         <Beyond />
-        {["ask", "contact"].map((id) => (
-          <section key={id} id={id} aria-hidden />
-        ))}
+        <Faq />
+        <Contact />
       </main>
     </>
   );
