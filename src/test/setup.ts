@@ -18,3 +18,7 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: () => {},
   }),
 });
+
+if (!("IntersectionObserver" in globalThis)) {
+  (globalThis as any).IntersectionObserver = class { observe() {} disconnect() {} unobserve() {} };
+}
