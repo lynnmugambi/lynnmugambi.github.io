@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Bulb, Heart, Paintbrush, PaperPlane, Squiggle, VSquiggle } from "@/components/doodles";
+import { PenBrush, PenBulb, PenHeart, PenPlane, Squiggle, VSquiggle } from "@/components/doodles";
 import { cn } from "@/lib/utils";
 
 export const notes = [
-  { title: "Travel", Icon: PaperPlane, tilt: -4, text: "Nairobi, Kuala Lumpur, London, Paris, New York. I've studied or worked in all five and wandered through plenty more. Every new place, and the people in it, stretches how I see things." },
-  { title: "Side projects", Icon: Bulb, tilt: 3, text: "There is always one more idea than I have time for. A few are in progress. The rest are waiting in my notebook." },
-  { title: "My heart", Icon: Heart, tilt: -2, text: "Family, friends and animals! <3" },
-  { title: "Art", Icon: Paintbrush, tilt: 5, text: "I paint, I doodle, and most nights I disappear into a coloring book to unwind. The margins of my notebooks have never been empty." },
+  { title: "Travel", Icon: PenPlane, tilt: -4, text: "Nairobi, Kuala Lumpur, London, Paris, New York. I've studied or worked in all five and wandered through plenty more. Every new place, and the people in it, stretches how I see things." },
+  { title: "Side projects", Icon: PenBulb, tilt: 3, text: "There is always one more idea than I have time for. A few are in progress. The rest are waiting in my notebook." },
+  { title: "My heart", Icon: PenHeart, tilt: -2, text: "Family, friends and animals! <3" },
+  { title: "Art", Icon: PenBrush, tilt: 5, text: "I paint, I doodle, and most nights I disappear into a coloring book to unwind. The margins of my notebooks have never been empty." },
 ];
 
 function Note({ n }: { n: (typeof notes)[number] }) {
@@ -27,7 +27,8 @@ function Note({ n }: { n: (typeof notes)[number] }) {
 
 export function Beyond() {
   return (
-    <section id="beyond" className="mx-auto max-w-6xl px-5 pb-20 pt-10 sm:px-8">
+    <section id="beyond" className="bg-[var(--lavender)] py-20">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
       <h2 className="headline text-4xl sm:text-5xl lg:text-6xl">Beyond code</h2>
       <div className="relative mt-12">
         <Squiggle className="pointer-events-none absolute inset-x-0 top-1/2 hidden h-10 w-full -translate-y-1/2 lg:block" />
@@ -35,6 +36,7 @@ export function Beyond() {
         <ul className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {notes.map((n) => <Note key={n.title} n={n} />)}
         </ul>
+      </div>
       </div>
     </section>
   );
