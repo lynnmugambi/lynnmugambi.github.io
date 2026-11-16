@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import type * as React from "react";
 import { cn } from "@/lib/utils";
 
-type DoodleProps = { className?: string; delay?: number };
+type DoodleProps = { className?: string; delay?: number; style?: React.CSSProperties };
 
-function Doodle({ viewBox, children, className, delay = 0 }: DoodleProps & { viewBox: string; children: ReactNode }) {
+function Doodle({ viewBox, children, className, delay = 0, style }: DoodleProps & { viewBox: string; children: ReactNode }) {
   const ref = useRef<SVGSVGElement>(null);
   const [drawn, setDrawn] = useState(false);
   useEffect(() => {
@@ -17,7 +18,7 @@ function Doodle({ viewBox, children, className, delay = 0 }: DoodleProps & { vie
   }, []);
   return (
     <svg ref={ref} viewBox={viewBox} preserveAspectRatio="none" fill="none" aria-hidden stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"
-      className={cn("doodle text-teal", drawn && "is-drawn", className)} style={{ ["--delay" as string]: `${delay}s` }}>
+      className={cn("doodle text-teal", drawn && "is-drawn", className)} style={{ ...style, ["--delay" as string]: `${delay}s` }}>
       {children}
     </svg>
   );
@@ -109,3 +110,7 @@ export function ResultNote({ text, className }: { text: string; className?: stri
     </span>
   );
 }
+
+export const CircleMark = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 100 70" {...p}>{P("M58 6 C 30 3, 6 14, 5 34 C 4 54, 28 66, 52 65 C 78 64, 96 52, 95 33 C 94 15, 74 4, 48 8 C 40 9, 34 11, 30 14")}</Doodle>
+);

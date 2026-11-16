@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Star } from "@/components/doodles";
+import { CircleMark, Star } from "@/components/doodles";
 export type CaseData = {
   label: string; title: string; summary: string; role: string;
   sections: { heading: string; text: string }[];
@@ -43,15 +43,9 @@ export function CaseStudy({ data }: { data: CaseData }) {
         <ol className="relative mt-10 space-y-10">
           {data.steps.map((s, i) => (
             <li key={s.title} className="relative flex gap-6">
-              <span className="headline relative w-14 shrink-0 text-4xl">
+              <span className="headline relative h-fit w-14 shrink-0 text-center text-4xl">
                 {String(i + 1).padStart(2, "0")}
-                {i < data.steps.length - 1 && (
-                  <span aria-hidden className="absolute inset-x-0 top-12 -bottom-9 flex items-center justify-center pr-5">
-                    <svg viewBox="0 0 16 48" fill="none" className="h-12 w-4 text-teal">
-                      <path d="M9 2 C3 8 3 12 8 17 C13 22 13 27 8 32 C3 37 4 42 10 46" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                )}
+                <CircleMark className="pointer-events-none absolute -left-3 -top-3 h-[calc(100%+1.5rem)] w-[calc(100%+1.5rem)]" style={{ rotate: `${[-6, 4, -2, 7][i % 4]}deg` }} delay={0.1} />
               </span>
               <div className="pt-1">
                 <h3 className="font-bold">{s.title}</h3>
