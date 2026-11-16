@@ -8,8 +8,8 @@ export const EMAIL = `mailto:${EMAIL_ADDRESS}`;
 export const footerLinks: { label: string; href: string; external?: boolean; download?: boolean }[] = [
   { label: "LinkedIn", href: "https://linkedin.com/in/lynnmugambi", external: true },
   { label: "GitHub", href: "https://github.com/lynnmugambi", external: true },
-  { label: "Email", href: EMAIL },
   { label: "Resume", href: resume.url, download: true },
+  { label: EMAIL_ADDRESS, href: EMAIL },
 ];
 
 export function Contact() {
@@ -36,7 +36,7 @@ export function Contact() {
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    className="label-mono text-ink transition-colors hover:text-primary focus-visible:text-primary"
+                    className={`label-mono text-ink transition-colors hover:text-primary focus-visible:text-primary ${l.href === EMAIL ? "normal-case underline underline-offset-4" : ""}`}
                     {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     {...(l.download ? { download: "Lynn_Mugambi_Resume.pdf" } : {})}
                     {...(l.href === EMAIL ? { onClick: copyEmail } : {})}
@@ -50,8 +50,9 @@ export function Contact() {
           <div className="relative shrink-0">
             <Arrow className="pointer-events-none absolute -top-14 left-2 h-12 w-16 rotate-[30deg] md:-left-24 md:-top-16 md:h-16 md:w-24 md:rotate-0" />
             <a
-              href={EMAIL}
-              onClick={copyEmail}
+              href="https://linkedin.com/in/lynnmugambi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-7 py-3.5 font-semibold text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5 hover:rotate-[-1deg] active:translate-y-0"
             >
               <svg
@@ -74,14 +75,6 @@ export function Contact() {
               </svg>
               <span className="relative">Get in touch</span>
             </a>
-            <button
-              type="button"
-              onClick={copyEmail}
-              className="label-mono mt-4 block text-ink transition-colors hover:text-primary focus-visible:text-primary"
-              aria-label={`Copy ${EMAIL_ADDRESS}`}
-            >
-              {EMAIL_ADDRESS}
-            </button>
             <p role="status" aria-live="polite" className="mt-2 h-6 font-hand text-sm text-teal">
               {copied ? "copied to clipboard!" : ""}
             </p>
