@@ -1,9 +1,11 @@
+import type { ReactNode } from "react";
 import { Star } from "@/components/doodles";
 export type CaseData = {
   label: string; title: string; summary: string; role: string;
   sections: { heading: string; text: string }[];
   steps: { title: string; text: string }[];
   tools: string[]; note?: string;
+  challengeDoodle?: ReactNode; outcomeDoodle?: ReactNode;
 };
 
 export function readTime(d: CaseData) {
@@ -29,25 +31,8 @@ export function CaseStudy({ data }: { data: CaseData }) {
       </div>
       {data.sections.map((s, i) => (
         <section key={s.heading} className="relative mt-14">
-          {i === 0 && (
-            <span aria-hidden className="pointer-events-none absolute -right-36 top-6 hidden -rotate-3 lg:block">
-              <span className="fb-btn flex items-center gap-1.5 rounded-lg border-2 border-teal px-2 py-1 font-hand text-xs text-teal">
-                <span className="grid h-4 w-4 place-items-center rounded-sm border-2 border-teal font-sans text-[0.6rem] font-bold leading-none">f</span>
-                sign in
-              </span>
-              <svg viewBox="0 0 24 24" fill="none" className="fb-cursor absolute -bottom-5 right-2 h-6 w-6 text-teal">
-                <path d="M5 3 L5 19 L9.5 14.5 L12.5 21 L15 20 L12 13.5 L18 13.5 Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" className="fill-background" />
-              </svg>
-            </span>
-          )}
-          {i === data.sections.length - 1 && (
-            <span aria-hidden className="pointer-events-none absolute -right-16 top-12 hidden lg:block">
-              <svg viewBox="0 0 60 30" fill="none" className="absolute -left-12 -top-5 h-6 w-12 text-teal">
-                <path d="M54 26 C48 12 34 8 8 10 M15 4 L8 10 L15 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <span className="block rotate-[-8deg] font-hand text-lg text-teal">yay!</span>
-            </span>
-          )}
+          {i === 0 && data.challengeDoodle}
+          {i === data.sections.length - 1 && data.outcomeDoodle}
           <h2 className="text-lg font-bold">{s.heading}</h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">{s.text}</p>
         </section>
