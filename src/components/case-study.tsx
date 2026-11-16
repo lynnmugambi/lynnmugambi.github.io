@@ -63,6 +63,7 @@ export function CaseStudy({ data }: { data: CaseData }) {
       </ul>
       {data.note && <p className="mt-8 text-sm italic text-muted-foreground">{data.note}</p>}
     </main>
+    </>
   );
 }
 

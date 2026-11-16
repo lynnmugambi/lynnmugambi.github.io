@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { Nav } from "@/components/nav";
 import { Skills } from "@/components/skills";
 import { FeaturedWork } from "@/components/featured-work";
