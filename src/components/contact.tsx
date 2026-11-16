@@ -16,7 +16,7 @@ export function Contact() {
       <section id="contact" className="bg-[var(--lavender)] text-ink">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-16 px-5 py-20 sm:px-8 md:flex-row md:items-end md:justify-between md:gap-10">
           <h2 className="headline max-w-3xl text-4xl !leading-[1.02] sm:text-5xl lg:text-6xl">
-            Excited to work together? Let's talk.
+            Excited to work together?<br />Let's talk!
           </h2>
           <div className="relative shrink-0">
             <Arrow className="pointer-events-none absolute -top-14 left-2 h-12 w-16 rotate-[30deg] md:-left-24 md:-top-16 md:h-16 md:w-24 md:rotate-0" />
