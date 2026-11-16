@@ -20,3 +20,9 @@ describe("Contact", () => {
     expect(screen.getByRole("link", { name: "Get in touch" }).getAttribute("href")).toBe("mailto:lynnlmugambi@gmail.com");
   });
 });
+describe("Footer", () => {
+  it("has a Resume download", () => {
+    render(<Contact />);
+    expect(screen.getByRole("link", { name: "Resume" }).getAttribute("download")).toBe("Lynn_Mugambi_Resume.pdf");
+  });
+});

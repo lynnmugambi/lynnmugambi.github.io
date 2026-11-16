@@ -1,4 +1,5 @@
 import { Arrow } from "@/components/doodles";
+import resume from "@/assets/Lynn_Mugambi_Resume.pdf.asset.json";
 
 export const EMAIL = "mailto:lynnlmugambi@gmail.com";
 
@@ -6,6 +7,7 @@ export const footerLinks: { label: string; href: string; external?: boolean; dow
   { label: "LinkedIn", href: "https://linkedin.com/in/lynnmugambi", external: true },
   { label: "GitHub", href: "https://github.com/lynnmugambi", external: true },
   { label: "Email", href: EMAIL },
+  { label: "Resume", href: resume.url, download: true },
 ];
 
 export function Contact() {
@@ -26,7 +28,7 @@ export function Contact() {
         <ul className="flex flex-wrap gap-x-6 gap-y-2">
           {footerLinks.map((l) => (
             <li key={l.label}>
-              <a href={l.href} className="label-mono hover:text-primary" {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} {...(l.download ? { download: "" } : {})}>{l.label}</a>
+              <a href={l.href} className="label-mono hover:text-primary" {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} {...(l.download ? { download: "Lynn_Mugambi_Resume.pdf" } : {})}>{l.label}</a>
             </li>
           ))}
         </ul>
