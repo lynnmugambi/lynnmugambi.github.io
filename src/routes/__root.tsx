@@ -15,23 +15,16 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <main className="flex min-h-screen items-center justify-center px-5">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+        <p className="label-mono text-muted-foreground">404</p>
+        <h1 className="headline mt-3 text-5xl sm:text-6xl">Page not found</h1>
+        <p className="mt-4 font-hand text-teal">this page wandered off the notebook</p>
+        <Link to="/" className="mt-8 inline-flex rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground">
+          Back home
+        </Link>
       </div>
-    </div>
+    </main>
   );
 }
 
@@ -81,7 +74,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lynn Mugambi — Product Engineer & Strategist" },
+      { title: "Lynn Mugambi | Product Engineer" },
       { name: "description", content: "Portfolio of Lynn Mugambi, product engineer and strategist in New York." },
       { name: "author", content: "Lynn Mugambi" },
       { property: "og:type", content: "website" },
@@ -92,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Anton&family=Homemade+Apple&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" },
