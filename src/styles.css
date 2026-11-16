@@ -83,6 +83,7 @@
   --background: oklch(0.982 0.007 88);
   --foreground: oklch(0.187 0 0);
   --ink: oklch(0.187 0 0);
+  --lavender: #eeeafb;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.187 0 0);
   --popover: oklch(1 0 0);
