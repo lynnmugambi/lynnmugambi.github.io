@@ -136,3 +136,10 @@ export const Paintbrush = (p: DoodleProps) => (
     {P("M28 30 C 22 30, 16 34, 15 42 C 14 48, 10 52, 6 54 C 16 56, 28 52, 30 42 C 31 38, 31 34, 30 32")}
   </Doodle>
 );
+export const CrystalBall = (p: DoodleProps) => (
+  <Doodle viewBox="0 0 60 60" {...p}>
+    {P("M30 10 C 42 10, 48 20, 47 30 C 46 40, 38 45, 30 45 C 20 45, 13 38, 13 28 C 13 18, 20 10, 30 10 Z")}
+    {P("M20 46 L 40 46 L 44 54 L 16 54 Z M 22 24 C 23 20, 26 18, 29 17")}
+    {P("M8 8 L 12 13 M 52 6 L 48 12 M 55 22 L 50 23")}
+  </Doodle>
+);

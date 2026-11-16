@@ -30,7 +30,7 @@ const links = [
   { href: "#work", label: "Work" },
   { href: "#skills", label: "Skills" },
   { href: "#beyond", label: "Beyond code" },
-  { href: "#ask", label: "Before you ask" },
+  { href: "#ask", label: "Q&A" },
   { href: "#contact", label: "Contact" },
 ];
 
