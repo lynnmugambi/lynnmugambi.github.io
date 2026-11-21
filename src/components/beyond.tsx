@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PenBrush, PenBulb, PenHeart, PenPlane, Squiggle, VSquiggle } from "@/components/doodles";
 import { cn } from "@/lib/utils";
 
@@ -11,15 +11,35 @@ export const notes = [
 
 function Note({ n }: { n: (typeof notes)[number] }) {
   const [open, setOpen] = useState(false);
+  const paperRef = useRef<HTMLButtonElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const paper = paperRef.current;
+    const content = contentRef.current;
+    if (!paper || !content) return;
+    const measure = () => {
+      // Reserve the same top/bottom breathing room at every screen width.
+      paper.style.setProperty("--open-height", `${Math.max(256, content.scrollHeight + 60)}px`);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(content);
+    return () => observer.disconnect();
+  }, []);
   return (
     <li className="relative">
-      <button type="button" aria-expanded={open} onClick={() => setOpen((o) => !o)}
+      <button ref={paperRef} type="button" aria-label={n.title} aria-expanded={open} onClick={() => setOpen((o) => !o)}
         style={{ ["--tilt" as string]: `${n.tilt}deg` }}
-        className={cn("note-paper group relative flex min-h-64 w-full flex-col items-center justify-center px-5 pb-6 pt-9 text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary", open && "is-open")}>
+        className={cn("note-paper group relative w-full text-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary", open && "is-open")}>
         <span aria-hidden className="note-tape" />
-        <n.Icon className="note-front h-14 w-14" />
-        <h3 className="headline mt-4 text-2xl">{n.title}</h3>
-        <p className="note-back mt-3 font-hand text-[0.8rem] leading-[1.9] text-teal">{n.text}</p>
+        <div className="note-front flex flex-col items-center" aria-hidden="true">
+          <n.Icon className="h-14 w-14" />
+          <span className="headline mt-4 text-2xl">{n.title}</span>
+        </div>
+        <div ref={contentRef} className="note-back">
+          <h3 className="headline text-2xl">{n.title}</h3>
+          <p className="mt-3 font-hand text-[0.8rem] leading-[1.9] text-teal">{n.text}</p>
+        </div>
       </button>
     </li>
   );

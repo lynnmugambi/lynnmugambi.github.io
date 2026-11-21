@@ -30,3 +30,4 @@ use the editor.
 <!-- LOVABLE:END -->
 - Case studies share one template (src/components/case-study.tsx) with one route file per case under src/routes/work.*; why: consistent layout, each story gets its own shareable URL.
 - Prerender all public content pages through an explicit TanStack Start pages list with automatic discovery disabled; why: Lovable disables link crawling, so enumeration guarantees static coverage without capturing future private pages.
+- Beyond Code notes measure their revealed content with ResizeObserver and animate explicit heights; why: longer text and responsive wrapping must expand smoothly without clipping or an unanimated auto-height jump.

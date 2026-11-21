@@ -1,8 +1,15 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import { Beyond, notes } from "@/components/beyond";
 
 describe("Beyond code", () => {
+  beforeAll(() => {
+    vi.stubGlobal("ResizeObserver", class {
+      observe() {}
+      disconnect() {}
+    });
+  });
+  afterAll(() => vi.unstubAllGlobals());
   it("has the four notes", () => {
     expect(notes.map((n) => n.title)).toEqual(["Travel", "Side projects", "My heart", "Art"]);
   });

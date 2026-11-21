@@ -214,23 +214,27 @@ body { font-family: var(--font-sans); background-image: radial-gradient(color-mi
 @media (prefers-reduced-motion: reduce) { .fb-cursor, .fb-btn { animation: none; } }
 
 .note-paper {
+  height: 16rem;
   background-color: var(--background);
   background-image: repeating-linear-gradient(to bottom, transparent 0 27px, color-mix(in oklab, var(--teal) 14%, transparent) 27px 28px);
   border: 1px solid color-mix(in oklab, var(--ink) 15%, transparent);
   box-shadow: 2px 3px 0 color-mix(in oklab, var(--ink) 12%, transparent);
   rotate: var(--tilt);
-  transition: rotate .3s ease, translate .3s ease, box-shadow .3s ease;
+  transition: height .35s cubic-bezier(.4, 0, .2, 1), rotate .3s ease, translate .3s ease, box-shadow .3s ease;
   cursor: pointer;
 }
 .note-tape { position: absolute; top: -10px; left: 50%; width: 80px; height: 22px; translate: -50% 0; rotate: -3deg;
   background: color-mix(in oklab, var(--teal) 18%, transparent); border: 1px solid color-mix(in oklab, var(--teal) 25%, transparent); }
-.note-back { display: none; }
+.note-front, .note-back { position: absolute; inset-inline: 20px; top: 50%; transform: translateY(-50%); transition: opacity .2s ease, visibility .2s ease; }
+.note-back { opacity: 0; visibility: hidden; }
 .note-paper.is-open, .note-paper:focus-visible { rotate: 0deg; translate: 0 -6px; box-shadow: 4px 8px 0 color-mix(in oklab, var(--ink) 15%, transparent); }
-.note-paper.is-open .note-back { display: block; }
-.note-paper.is-open .note-front { display: none; }
+.note-paper.is-open { height: var(--open-height, 16rem); }
+.note-paper.is-open .note-back { opacity: 1; visibility: visible; }
+.note-paper.is-open .note-front { opacity: 0; visibility: hidden; }
 @media (hover: hover) {
   .note-paper:hover { rotate: 0deg; translate: 0 -6px; box-shadow: 4px 8px 0 color-mix(in oklab, var(--ink) 15%, transparent); }
-  .note-paper:hover .note-back { display: block; }
-  .note-paper:hover .note-front { display: none; }
+  .note-paper:hover { height: var(--open-height, 16rem); }
+  .note-paper:hover .note-back { opacity: 1; visibility: visible; }
+  .note-paper:hover .note-front { opacity: 0; visibility: hidden; }
 }
-@media (prefers-reduced-motion: reduce) { .note-paper { transition: none; } .note-paper:hover, .note-paper.is-open { translate: none; } }
+@media (prefers-reduced-motion: reduce) { .note-paper, .note-front, .note-back { transition: none; } .note-paper:hover, .note-paper.is-open { translate: none; } }
