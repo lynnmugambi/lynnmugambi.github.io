@@ -17,8 +17,10 @@ describe("Contact", () => {
   });
 });
 describe("Footer", () => {
-  it("has a Resume download", () => {
+  it("downloads the resume from the site's own public folder", () => {
     render(<Contact />);
-    expect(screen.getByRole("link", { name: "Resume" }).getAttribute("download")).toBe("Lynn_Mugambi_Resume.pdf");
+    const resume = screen.getByRole("link", { name: "Resume" });
+    expect(resume.getAttribute("href")).toBe("/Lynn_Mugambi_Resume.pdf");
+    expect(resume.getAttribute("download")).toBe("Lynn_Mugambi_Resume.pdf");
   });
 });

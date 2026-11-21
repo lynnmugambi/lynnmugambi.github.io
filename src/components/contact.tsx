@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Arrow } from "@/components/doodles";
-import resume from "@/assets/Lynn_Mugambi_Resume.pdf.asset.json";
 
 export const EMAIL_ADDRESS = "lynnlmugambi@gmail.com";
 export const EMAIL = `mailto:${EMAIL_ADDRESS}`;
+export const RESUME_HREF = "/Lynn_Mugambi_Resume.pdf";
+export const RESUME_FILENAME = "Lynn_Mugambi_Resume.pdf";
 
 export const footerLinks: { label: string; href: string; external?: boolean; download?: boolean }[] = [
   { label: "LinkedIn", href: "https://linkedin.com/in/lynnmugambi", external: true },
   { label: "GitHub", href: "https://github.com/lynnmugambi", external: true },
-  { label: "Resume", href: resume.url, download: true },
+  { label: "Resume", href: RESUME_HREF, download: true },
   { label: EMAIL_ADDRESS, href: EMAIL },
 ];
 
@@ -38,7 +39,7 @@ export function Contact() {
                     href={l.href}
                     className={`label-mono text-ink transition-colors hover:text-primary focus-visible:text-primary ${l.href === EMAIL ? "normal-case underline underline-offset-4" : ""}`}
                     {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    {...(l.download ? { download: "Lynn_Mugambi_Resume.pdf" } : {})}
+                    {...(l.download ? { download: RESUME_FILENAME } : {})}
                     {...(l.href === EMAIL ? { onClick: copyEmail } : {})}
                   >
                     {l.label}

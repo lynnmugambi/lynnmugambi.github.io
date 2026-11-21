@@ -18,7 +18,15 @@ export default defineConfig({
       { path: "/work/sign-up" },
       { path: "/work/hifadhi" },
     ],
-    prerender: { enabled: true, crawlLinks: true, autoStaticPathsDiscovery: false },
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+      autoStaticPathsDiscovery: false,
+      // Only page routes are prerendered: skip files (e.g. the resume PDF) and
+      // Lovable asset paths, which are served as-is, never rendered to HTML.
+      filter: (page: { path: string }) =>
+        !page.path.startsWith("/__l5e") && !/\.[A-Za-z0-9]+$/.test(page.path),
+    },
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
