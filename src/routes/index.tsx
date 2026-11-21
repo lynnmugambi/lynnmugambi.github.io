@@ -6,8 +6,9 @@ import { FeaturedWork } from "@/components/featured-work";
 import { Beyond } from "@/components/beyond";
 import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
-import portrait from "@/assets/lynn_portrait.png.asset.json";
 import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, TerminalPrompt, Underline } from "@/components/doodles";
+
+export const PORTRAIT_HREF = "lynn_portrait.png";
 
 export const Route = createFileRoute("/")({
   loader: () => getRequestOrigin(),
@@ -104,7 +105,7 @@ function Hero() {
             delay={1.1}
           />
           <img
-            src={portrait.url}
+            src={PORTRAIT_HREF}
             alt="Lynn Mugambi smiling, wearing a white top and a red floral skirt"
             width={795}
             height={768}
