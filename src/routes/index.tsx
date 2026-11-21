@@ -8,7 +8,7 @@ import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, TerminalPrompt, Underline } from "@/components/doodles";
 
-export const PORTRAIT_HREF = "lynn_portrait.png";
+export const PORTRAIT_HREF = "/lynn_portrait.png";
 
 export const Route = createFileRoute("/")({
   loader: () => getRequestOrigin(),
