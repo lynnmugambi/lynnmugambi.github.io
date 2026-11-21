@@ -111,7 +111,7 @@ function Hero() {
             height={768}
             fetchPriority="high"
             decoding="async"
-            className="rise relative w-full"
+            className="rise relative w-full aspect-[795/768] object-cover object-top"
             style={{ animationDelay: ".2s" }}
           />
         </div>
