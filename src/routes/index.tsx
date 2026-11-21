@@ -13,7 +13,7 @@ export const PORTRAIT_HREF = "/lynn_portrait.png";
 export const Route = createFileRoute("/")({
   loader: () => getRequestOrigin(),
   head: ({ loaderData }) => {
-    const img = "https://lynnmugambi.github.io/og-image.jpg";
+    const img = "https://lynnmugambi.github.io/og-image.png";
     return {
       meta: [
         { title: "Lynn Mugambi | Product Engineer" },
