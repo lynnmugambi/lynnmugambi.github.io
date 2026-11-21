@@ -29,3 +29,4 @@ use the editor.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
 - Case studies share one template (src/components/case-study.tsx) with one route file per case under src/routes/work.*; why: consistent layout, each story gets its own shareable URL.
+- Prerender all public content pages through an explicit TanStack Start pages list with automatic discovery disabled; why: Lovable disables link crawling, so enumeration guarantees static coverage without capturing future private pages.

@@ -1,3 +1,4 @@
 - [x] Hero: note must not overlap photo on phone/tablet
 - [x] Hand-drawn frame around hero photo
 - [x] Footer: add Resume download link
+- [x] Enable static prerendering for the homepage and all three case pages.
