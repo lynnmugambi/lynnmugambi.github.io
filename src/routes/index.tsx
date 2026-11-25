@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { getRequestOrigin } from "@/lib/origin.functions";
 import { Nav } from "@/components/nav";
 import { Skills } from "@/components/skills";
 import { FeaturedWork } from "@/components/featured-work";
@@ -11,8 +10,7 @@ import { Arrow, ClickCursor, CoffeeMug, Frame, HandNote, TerminalPrompt, Underli
 export const PORTRAIT_HREF = "/lynn_portrait.png";
 
 export const Route = createFileRoute("/")({
-  loader: () => getRequestOrigin(),
-  head: ({ loaderData }) => {
+  head: () => {
     const img = "https://lynnmugambi.github.io/og-image.png";
     return {
       meta: [
